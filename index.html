@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coinquistador : Mission Ancre d'Or</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(180deg, #0a1628 0%, #0d2847 30%, #0f3060 60%, #0a1628 100%);
+            color: #e0e8f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated bubbles background */
+        .bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -20px;
+            background: radial-gradient(circle at 30% 30%, rgba(100, 200, 255, 0.15), rgba(100, 200, 255, 0.03));
+            border-radius: 50%;
+            animation: rise linear infinite;
+        }
+
+        .bubble:nth-child(1) { width: 20px; height: 20px; left: 10%; animation-duration: 8s; animation-delay: 0s; }
+        .bubble:nth-child(2) { width: 35px; height: 35px; left: 25%; animation-duration: 12s; animation-delay: 2s; }
+        .bubble:nth-child(3) { width: 15px; height: 15px; left: 45%; animation-duration: 9s; animation-delay: 4s; }
+        .bubble:nth-child(4) { width: 25px; height: 25px; left: 65%; animation-duration: 11s; animation-delay: 1s; }
+        .bubble:nth-child(5) { width: 18px; height: 18px; left: 80%; animation-duration: 10s; animation-delay: 3s; }
+        .bubble:nth-child(6) { width: 30px; height: 30px; left: 55%; animation-duration: 13s; animation-delay: 5s; }
+
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 0.6; }
+            50% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .game-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 100, 200, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #7ab8e0;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #a0bcd0;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stores {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .store-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            width: 240px;
+        }
+
+        .store-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 100, 200, 0.2);
+        }
+
+        .store-card h2 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .store-icon {
+            font-size: 1.3rem;
+        }
+
+        .qr-code {
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .qr-code img {
+            display: block;
+            width: 150px;
+            height: 150px;
+        }
+
+        .store-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .store-badge:hover {
+            opacity: 0.85;
+        }
+
+        .badge-apple {
+            background: linear-gradient(135deg, #333, #000);
+        }
+
+        .badge-google {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            margin-top: 3rem;
+            color: #4a6a80;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 540px) {
+            h1 { font-size: 1.5rem; }
+            .stores { flex-direction: column; align-items: center; }
+            .store-card { width: 100%; max-width: 280px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div class="container">
+        <h1>Coinquistador</h1>
+        <p class="subtitle">Mission Ancre d'Or</p>
+
+        <p class="description">
+            Lance ton sous-marin, plonge toujours plus profond et pars
+            à la recherche de l'ancre d'or légendaire à 100 000 mètres sous l'océan !
+        </p>
+
+        <div class="stores">
+            <div class="store-card">
+                <h2><span class="store-icon"></span> App Store</h2>
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fapps.apple.com%2Fapp%2Fcoinquistador-ancre-dor%2Fid6759678738" alt="QR Code App Store">
+                </div>
+                <br>
+                <a href="https://apps.apple.com/app/coinquistador-ancre-dor/id6759678738" class="store-badge badge-apple">
+                    Télécharger sur iOS
+                </a>
+            </div>
+
+            <div class="store-card">
+                <h2><span class="store-icon">🤖</span> Google Play</h2>
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.prouestudio.coinquistadormissionancredor" alt="QR Code Google Play">
+                </div>
+                <br>
+                <a href="https://play.google.com/store/apps/details?id=com.prouestudio.coinquistadormissionancredor" class="store-badge badge-google">
+                    Télécharger sur Android
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Bruno Faugeroux &mdash; Proue Studio
+    </footer>
+</body>
+</html>
