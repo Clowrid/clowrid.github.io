@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProueStudio &mdash; Nos Jeux</title>
-    <meta name="description" content="ProueStudio - Studio ind&eacute;pendant de jeux mobiles. D&eacute;couvrez Coinquistador et Giga Bang.">
+    <meta name="description" content="ProueStudio - Studio ind&eacute;pendant de jeux mobiles. D&eacute;couvrez Coinquistador, MoMethe et Giga Bang.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -39,6 +39,8 @@
             --pink-1: #f472b6;
             --pink-2: #ec4899;
             --green-1: #34d399;
+            --green-2: #10b981;
+            --green-glow: rgba(52, 211, 153, 0.12);
             --radius-xl: 24px;
             --radius-lg: 18px;
             --radius-md: 12px;
@@ -224,6 +226,7 @@
 
         .game-card:nth-child(1) { animation-delay: 0.25s; }
         .game-card:nth-child(2) { animation-delay: 0.4s; }
+        .game-card:nth-child(3) { animation-delay: 0.55s; }
 
         .game-card::before {
             content: '';
@@ -241,6 +244,10 @@
 
         .game-card--cosmic::before {
             background: radial-gradient(ellipse at 50% -20%, rgba(192, 132, 252, 0.08), transparent 70%);
+        }
+
+        .game-card--nature::before {
+            background: radial-gradient(ellipse at 50% -20%, rgba(52, 211, 153, 0.08), transparent 70%);
         }
 
         .game-card:hover {
@@ -273,6 +280,10 @@
             background: linear-gradient(90deg, transparent, var(--cosmic-1), var(--pink-1), var(--cosmic-1), transparent);
         }
 
+        .game-card--nature::after {
+            background: linear-gradient(90deg, transparent, var(--green-1), var(--gold-1), var(--green-1), transparent);
+        }
+
         /* ── Game badge ── */
         .game-card__badge {
             font-size: 0.65rem;
@@ -296,6 +307,12 @@
             border: 1px solid rgba(192, 132, 252, 0.15);
         }
 
+        .game-card--nature .game-card__badge {
+            color: var(--green-1);
+            background: rgba(52, 211, 153, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.15);
+        }
+
         /* ── Game name ── */
         .game-card__name {
             font-family: 'Space Grotesk', sans-serif;
@@ -314,6 +331,13 @@
 
         .game-card--cosmic .game-card__name {
             background: linear-gradient(135deg, var(--cosmic-1), var(--pink-1), #e879f9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .game-card--nature .game-card__name {
+            background: linear-gradient(135deg, var(--green-1), var(--green-2), #6ee7b7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -389,6 +413,10 @@
             box-shadow: 0 10px 40px rgba(192, 132, 252, 0.2);
         }
 
+        .game-card--nature .qr-item__code:hover {
+            box-shadow: 0 10px 40px rgba(52, 211, 153, 0.2);
+        }
+
         .qr-item__code img {
             display: block;
             width: 140px;
@@ -436,6 +464,80 @@
             background: rgba(192, 132, 252, 0.2);
             border-color: rgba(192, 132, 252, 0.35);
             box-shadow: 0 4px 20px rgba(192, 132, 252, 0.15);
+        }
+
+        .game-card--nature .qr-item__link {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        .game-card--nature .qr-item__link:hover {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: rgba(52, 211, 153, 0.35);
+            box-shadow: 0 4px 20px rgba(52, 211, 153, 0.15);
+        }
+
+        /* ── Alpha ribbon ── */
+        .qr-item--alpha {
+            position: relative;
+        }
+
+        .qr-item__ribbon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-12deg);
+            background: rgba(220, 38, 38, 0.92);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.4rem 1.2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px rgba(239, 68, 68, 0.5);
+            z-index: 3;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* ── Coming soon placeholder ── */
+        .qr-item--soon {
+            opacity: 0.45;
+        }
+
+        .qr-item--soon .qr-item__code {
+            background: var(--glass);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 160px;
+            height: 160px;
+            padding: 0;
+        }
+
+        .qr-item--soon .qr-item__code span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ── Beta badge ── */
+        .game-card__beta {
+            display: inline-block;
+            font-size: 0.55rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.2rem 0.6rem;
+            border-radius: 100px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            color: var(--gold-1);
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.2);
         }
 
         /* ── Footer ── */
@@ -563,44 +665,6 @@
 
         <!-- Games -->
         <section class="games">
-            <!-- Coinquistador -->
-            <article class="game-card game-card--ocean">
-                <span class="game-card__badge">Aventure sous-marine</span>
-                <h2 class="game-card__name">Coinquistador</h2>
-                <p class="game-card__subtitle">Mission Ancre d'Or</p>
-                <p class="game-card__desc">
-                    Lance ton sous-marin et plonge toujours plus profond sous l'oc&eacute;an pour d&eacute;couvrir des tr&eacute;sors cach&eacute;s&nbsp;!
-                </p>
-                <div class="qr-row">
-                    <div class="qr-item">
-                        <span class="qr-item__label">
-                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                            App Store
-                        </span>
-                        <div class="qr-item__code">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fapps.apple.com%2Fapp%2Fcoinquistador-ancre-dor%2Fid6759678738" alt="QR Code App Store - Coinquistador" loading="lazy">
-                        </div>
-                        <a href="https://apps.apple.com/app/coinquistador-ancre-dor/id6759678738" class="qr-item__link" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                            T&eacute;l&eacute;charger
-                        </a>
-                    </div>
-                    <div class="qr-item">
-                        <span class="qr-item__label">
-                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
-                            Google Play
-                        </span>
-                        <div class="qr-item__code">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.prouestudio.coinquistadormissionancredor" alt="QR Code Google Play - Coinquistador" loading="lazy">
-                        </div>
-                        <a href="https://play.google.com/store/apps/details?id=com.prouestudio.coinquistadormissionancredor" class="qr-item__link" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
-                            T&eacute;l&eacute;charger
-                        </a>
-                    </div>
-                </div>
-            </article>
-
             <!-- Giga Bang -->
             <article class="game-card game-card--cosmic">
                 <span class="game-card__badge">Cr&eacute;ation galactique</span>
@@ -638,13 +702,83 @@
                     </div>
                 </div>
             </article>
+
+            <!-- MoMethe -->
+            <article class="game-card game-card--nature">
+                <span class="game-card__badge">Mots m&ecirc;l&eacute;s zen</span>
+                <h2 class="game-card__name">MoMethe <span class="game-card__beta">Beta</span></h2>
+                <p class="game-card__subtitle">Mots M&ecirc;l&eacute;s Th&eacute;matiques</p>
+                <p class="game-card__desc">
+                    Trouve les mots cach&eacute;s dans une ambiance zen et apaisante. 30 th&egrave;mes, 4 modes de jeu et plus de 3000 puzzles &agrave; d&eacute;couvrir&nbsp;!
+                </p>
+                <div class="qr-row">
+                    <div class="qr-item">
+                        <span class="qr-item__label">
+                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            App Store
+                        </span>
+                        <div class="qr-item__code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fapps.apple.com%2Ffr%2Fapp%2Fmomethe-mots-m%25C3%25AAl%25C3%25A9s%2Fid6761310366" alt="QR Code App Store - MoMethe" loading="lazy">
+                        </div>
+                        <a href="https://apps.apple.com/fr/app/momethe-mots-m%C3%AAl%C3%A9s/id6761310366" class="qr-item__link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            T&eacute;l&eacute;charger
+                        </a>
+                    </div>
+                    <div class="qr-item qr-item--soon">
+                        <span class="qr-item__label">
+                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
+                            Google Play
+                        </span>
+                        <div class="qr-item__code">
+                            <span>Coming soon</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Coinquistador -->
+            <article class="game-card game-card--ocean">
+                <span class="game-card__badge">Aventure sous-marine</span>
+                <h2 class="game-card__name">Coinquistador</h2>
+                <p class="game-card__subtitle">Mission Ancre d'Or</p>
+                <p class="game-card__desc">
+                    Lance ton sous-marin et plonge toujours plus profond sous l'oc&eacute;an pour d&eacute;couvrir des tr&eacute;sors cach&eacute;s&nbsp;!
+                </p>
+                <div class="qr-row">
+                    <div class="qr-item qr-item--alpha">
+                        <span class="qr-item__ribbon">Alpha &middot; Instable</span>
+                        <span class="qr-item__label">
+                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            App Store
+                        </span>
+                        <div class="qr-item__code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fapps.apple.com%2Ffr%2Fapp%2Fcoinquistador-ancre-dor%2Fid6759678738" alt="QR Code App Store - Coinquistador" loading="lazy">
+                        </div>
+                        <a href="https://apps.apple.com/fr/app/coinquistador-ancre-dor/id6759678738" class="qr-item__link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            T&eacute;l&eacute;charger
+                        </a>
+                    </div>
+                    <div class="qr-item">
+                        <span class="qr-item__label">
+                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
+                            Google Play
+                        </span>
+                        <div class="qr-item__code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.prouestudio.coinquistadormissionancredor" alt="QR Code Google Play - Coinquistador" loading="lazy">
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.prouestudio.coinquistadormissionancredor" class="qr-item__link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
+                            T&eacute;l&eacute;charger
+                        </a>
+                    </div>
+                </div>
+            </article>
         </section>
 
         <!-- Footer -->
         <footer>
-            <div class="footer__links">
-                <a href="clac-clac-swap/privacy-policy.html">Politique de confidentialit&eacute;</a>
-            </div>
             <p class="footer__copy">&copy; 2026 ProueStudio &mdash; Bruno Faugeroux</p>
         </footer>
     </div>
