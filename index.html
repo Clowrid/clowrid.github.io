@@ -358,6 +358,76 @@
             margin-bottom: 2rem;
         }
 
+        /* ── Game preview video ── */
+        .game-card__preview {
+            position: relative;
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 1.8rem;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .game-card__preview video {
+            display: block;
+            width: 100%;
+            border-radius: var(--radius-lg);
+            opacity: 0.85;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .game-card__preview:hover video {
+            opacity: 1;
+            transform: scale(1.03);
+        }
+
+        .game-card__preview::after {
+            content: '▶';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-lg);
+            opacity: 1;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-card__preview.playing::after {
+            opacity: 0;
+        }
+
+        .game-card--ocean .game-card__preview {
+            max-width: 360px;
+            box-shadow: 0 4px 24px rgba(56, 189, 248, 0.12);
+        }
+
+        .game-card--ocean .game-card__preview:hover {
+            box-shadow: 0 8px 40px rgba(56, 189, 248, 0.2);
+        }
+
+        .game-card--cosmic .game-card__preview {
+            box-shadow: 0 4px 24px rgba(192, 132, 252, 0.12);
+        }
+
+        .game-card--cosmic .game-card__preview:hover {
+            box-shadow: 0 8px 40px rgba(192, 132, 252, 0.2);
+        }
+
+        .game-card--nature .game-card__preview {
+            box-shadow: 0 4px 24px rgba(52, 211, 153, 0.12);
+        }
+
+        .game-card--nature .game-card__preview:hover {
+            box-shadow: 0 8px 40px rgba(52, 211, 153, 0.2);
+        }
+
         /* ── QR section ── */
         .qr-row {
             display: flex;
@@ -665,52 +735,20 @@
 
         <!-- Games -->
         <section class="games">
-            <!-- Giga Bang -->
-            <article class="game-card game-card--cosmic">
-                <span class="game-card__badge">Cr&eacute;ation galactique</span>
-                <h2 class="game-card__name">Giga Bang</h2>
-                <p class="game-card__subtitle">Cr&eacute;ation Galactique</p>
-                <p class="game-card__desc">
-                    Explore l'univers et cr&eacute;e ta propre galaxie dans cette aventure cosmique&nbsp;!
-                </p>
-                <div class="qr-row">
-                    <div class="qr-item">
-                        <span class="qr-item__label">
-                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                            App Store
-                        </span>
-                        <div class="qr-item__code">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fgiga-bang-cr%25C3%25A9ation-galactique%2Fid6760845491" alt="QR Code App Store - Giga Bang" loading="lazy">
-                        </div>
-                        <a href="https://apps.apple.com/us/app/giga-bang-cr%C3%A9ation-galactique/id6760845491" class="qr-item__link" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                            T&eacute;l&eacute;charger
-                        </a>
-                    </div>
-                    <div class="qr-item">
-                        <span class="qr-item__label">
-                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
-                            Google Play
-                        </span>
-                        <div class="qr-item__code">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fhl%3Den%26id%3Dcom.clacclac.clac_clac_swap" alt="QR Code Google Play - Giga Bang" loading="lazy">
-                        </div>
-                        <a href="https://play.google.com/store/apps/details?hl=en&id=com.clacclac.clac_clac_swap" class="qr-item__link" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
-                            T&eacute;l&eacute;charger
-                        </a>
-                    </div>
-                </div>
-            </article>
-
             <!-- MoMethe -->
             <article class="game-card game-card--nature">
                 <span class="game-card__badge">Mots m&ecirc;l&eacute;s zen</span>
-                <h2 class="game-card__name">MoMethe <span class="game-card__beta">Beta</span></h2>
+                <h2 class="game-card__name">MoMethe</h2>
                 <p class="game-card__subtitle">Mots M&ecirc;l&eacute;s Th&eacute;matiques</p>
                 <p class="game-card__desc">
                     Trouve les mots cach&eacute;s dans une ambiance zen et apaisante. 30 th&egrave;mes, 4 modes de jeu et plus de 3000 puzzles &agrave; d&eacute;couvrir&nbsp;!
                 </p>
+                <div class="game-card__preview" onclick="togglePreview(this)">
+                    <video muted loop playsinline preload="metadata" poster="preview/momethe_poster.jpg">
+                        <source src="preview/momethe.webm" type="video/webm">
+                        <source src="preview/momethe.mp4" type="video/mp4">
+                    </video>
+                </div>
                 <div class="qr-row">
                     <div class="qr-item">
                         <span class="qr-item__label">
@@ -741,6 +779,50 @@
                 </div>
             </article>
 
+            <!-- Giga Bang -->
+            <article class="game-card game-card--cosmic">
+                <span class="game-card__badge">Cr&eacute;ation galactique</span>
+                <h2 class="game-card__name">Giga Bang</h2>
+                <p class="game-card__subtitle">Cr&eacute;ation Galactique</p>
+                <p class="game-card__desc">
+                    Explore l'univers et cr&eacute;e ta propre galaxie dans cette aventure cosmique&nbsp;!
+                </p>
+                <div class="game-card__preview" onclick="togglePreview(this)">
+                    <video muted loop playsinline preload="metadata" poster="preview/gigabang_poster.jpg">
+                        <source src="preview/gigabang.webm" type="video/webm">
+                        <source src="preview/gigabang.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="qr-row">
+                    <div class="qr-item">
+                        <span class="qr-item__label">
+                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            App Store
+                        </span>
+                        <div class="qr-item__code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fgiga-bang-cr%25C3%25A9ation-galactique%2Fid6760845491" alt="QR Code App Store - Giga Bang" loading="lazy">
+                        </div>
+                        <a href="https://apps.apple.com/us/app/giga-bang-cr%C3%A9ation-galactique/id6760845491" class="qr-item__link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            T&eacute;l&eacute;charger
+                        </a>
+                    </div>
+                    <div class="qr-item">
+                        <span class="qr-item__label">
+                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
+                            Google Play
+                        </span>
+                        <div class="qr-item__code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fhl%3Den%26id%3Dcom.clacclac.clac_clac_swap" alt="QR Code Google Play - Giga Bang" loading="lazy">
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?hl=en&id=com.clacclac.clac_clac_swap" class="qr-item__link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
+                            T&eacute;l&eacute;charger
+                        </a>
+                    </div>
+                </div>
+            </article>
+
             <!-- Coinquistador -->
             <article class="game-card game-card--ocean">
                 <span class="game-card__badge">Aventure sous-marine</span>
@@ -749,6 +831,12 @@
                 <p class="game-card__desc">
                     Lance ton sous-marin et plonge toujours plus profond sous l'oc&eacute;an pour d&eacute;couvrir des tr&eacute;sors cach&eacute;s&nbsp;!
                 </p>
+                <div class="game-card__preview" onclick="togglePreview(this)">
+                    <video muted loop playsinline preload="metadata" poster="preview/coinquistador_poster.jpg">
+                        <source src="preview/coinquistador.webm" type="video/webm">
+                        <source src="preview/coinquistador.mp4" type="video/mp4">
+                    </video>
+                </div>
                 <div class="qr-row">
                     <div class="qr-item qr-item--alpha">
                         <span class="qr-item__ribbon">Alpha &middot; Instable</span>
@@ -789,6 +877,21 @@
 
     <!-- Stars animation -->
     <script>
+        function togglePreview(container) {
+            const video = container.querySelector('video');
+            if (video.paused) {
+                var playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(function () {
+                        container.classList.add('playing');
+                    }).catch(function () {});
+                }
+            } else {
+                video.pause();
+                container.classList.remove('playing');
+            }
+        }
+
         (function () {
             const canvas = document.getElementById('stars');
             const ctx = canvas.getContext('2d');
