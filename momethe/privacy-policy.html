@@ -19,7 +19,7 @@
 
 <h1>Politique de confidentialité</h1>
 <p><strong>MoMethe — Mots Mêlés Thématiques</strong></p>
-<p class="updated">Dernière mise à jour : 28 mars 2026</p>
+<p class="updated">Dernière mise à jour : 17 avril 2026</p>
 
 <p>ProueStudio (ci-après "nous") développe et publie l'application mobile <strong>MoMethe — Mots Mêlés Thématiques</strong> (ci-après "le Jeu"), disponible sur Google Play et l'App Store. Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons les informations lorsque vous utilisez notre Jeu.</p>
 
@@ -32,6 +32,8 @@
   <li>Identifiant publicitaire de l'appareil (GAID sur Android / IDFA sur iOS)</li>
   <li>Modèle de l'appareil, version du système d'exploitation</li>
   <li>Adresse IP (utilisée pour la localisation approximative par les services publicitaires)</li>
+  <li>Jeton de notification push (FCM token) : identifiant technique unique de l'appareil utilisé pour envoyer les notifications de duel (invitation reçue, tour à jouer). Ce jeton est lié uniquement à votre identifiant Firebase anonyme, jamais à votre identité.</li>
+  <li>Données de diagnostic : rapports de plantage anonymisés pour améliorer la stabilité du Jeu</li>
 </ul>
 
 <h2>2. Services tiers</h2>
@@ -46,7 +48,17 @@
 <p>Politique de confidentialité : <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></p>
 
 <h3>Cloud Firestore (base de données)</h3>
-<p>Cloud Firestore stocke les données liées aux classements : pseudo choisi et scores. Ces données sont associées à votre identifiant anonyme.</p>
+<p>Cloud Firestore stocke les données liées aux classements et aux duels multijoueurs : pseudo choisi, scores, codes d'invitation de duel (6 caractères), liste des participants à un duel et résultats de chaque partie. Ces données sont associées à votre identifiant Firebase anonyme.</p>
+
+<h3>Firebase Cloud Messaging (notifications push)</h3>
+<p>Firebase Cloud Messaging (FCM) envoie les notifications push transactionnelles liées aux duels multijoueurs : invitation reçue d'un ami, tour à jouer dans un duel en cours. Aucune notification marketing n'est envoyée. Le jeton FCM est stocké sur nos serveurs uniquement pour cibler votre appareil et peut être supprimé à tout moment en désactivant les notifications dans les réglages système ou dans l'écran Réglages du Jeu.</p>
+<p>Politique de confidentialité : <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></p>
+
+<h3>Firebase Crashlytics (rapports de plantage)</h3>
+<p>Firebase Crashlytics collecte automatiquement des rapports de plantage anonymisés (pile d'appels, version de l'appli, modèle d'appareil) afin d'identifier et corriger les bugs. Aucune donnée personnelle n'est transmise.</p>
+
+<h3>Firebase Analytics (statistiques d'usage)</h3>
+<p>Firebase Analytics collecte des statistiques agrégées et anonymes sur l'utilisation du Jeu (écrans consultés, niveaux joués, fonctionnalités utilisées) pour améliorer l'expérience utilisateur.</p>
 
 <h3>RevenueCat (achats intégrés)</h3>
 <p>RevenueCat gère les achats intégrés dans le Jeu (suppression des publicités). Les transactions sont traitées par Apple (App Store) ou Google (Google Play) selon votre appareil. RevenueCat ne collecte aucune donnée financière directement — seul un identifiant anonyme est utilisé pour vérifier le statut de votre achat.</p>
@@ -72,6 +84,7 @@
   <li><strong>Droit d'opposition</strong> : refuser le traitement de vos données à des fins publicitaires</li>
   <li><strong>Désactivation du suivi iOS</strong> : Réglages &gt; Confidentialité et sécurité &gt; Suivi</li>
   <li><strong>Désactivation du suivi Android</strong> : Paramètres &gt; Google &gt; Annonces</li>
+  <li><strong>Désactivation des notifications push</strong> : dans l'écran Réglages du Jeu, ou dans les réglages système de votre appareil (iOS : Réglages &gt; Notifications &gt; MoMethe ; Android : Paramètres &gt; Applications &gt; MoMethe &gt; Notifications)</li>
 </ul>
 
 <h2>8. Modifications</h2>
