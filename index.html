@@ -610,9 +610,130 @@
             border: 1px solid rgba(251, 191, 36, 0.2);
         }
 
+        /* ── About ── */
+        .about {
+            width: 100%;
+            max-width: 1060px;
+            margin-top: 5rem;
+            display: grid;
+            grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.055), rgba(255, 255, 255, 0.025) 45%, rgba(192, 132, 252, 0.045));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
+            animation: fadeUp 0.9s ease-out 0.65s backwards;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 10%;
+            left: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.75), rgba(251, 191, 36, 0.7), rgba(192, 132, 252, 0.65), transparent);
+            z-index: 2;
+        }
+
+        .about__visual {
+            min-height: 440px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about__visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent 65%, rgba(5, 8, 16, 0.22));
+            pointer-events: none;
+        }
+
+        .about__visual img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+            object-position: center;
+            filter: saturate(0.82) contrast(1.03) brightness(0.88);
+        }
+
+        .about__content {
+            padding: clamp(2.25rem, 5vw, 4rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 1.15rem;
+            color: var(--green-1);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .about__eyebrow::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: currentColor;
+            opacity: 0.75;
+        }
+
+        .about__title {
+            max-width: 500px;
+            margin-bottom: 1.4rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 650;
+            letter-spacing: -0.8px;
+            line-height: 1.12;
+            color: var(--text-primary);
+        }
+
+        .about__text {
+            max-width: 560px;
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            line-height: 1.78;
+        }
+
+        .about__text p + p {
+            margin-top: 1rem;
+        }
+
+        .about__thanks {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .about__signature {
+            margin-top: 1.6rem;
+            color: var(--text-muted);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.76rem;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+        }
+
         /* ── Footer ── */
         footer {
-            margin-top: 5rem;
+            margin-top: 2.5rem;
             padding: 2rem 1.5rem;
             text-align: center;
             animation: fadeUp 0.9s ease-out 0.55s backwards;
@@ -705,6 +826,34 @@
 
             .section-label {
                 margin-bottom: 1.8rem;
+            }
+
+            .about {
+                margin-top: 3rem;
+                grid-template-columns: 1fr;
+                border-radius: var(--radius-lg);
+            }
+
+            .about__visual {
+                min-height: 0;
+                aspect-ratio: 4 / 3;
+            }
+
+            .about__visual::after {
+                background: linear-gradient(180deg, transparent 70%, rgba(5, 8, 16, 0.28));
+            }
+
+            .about__content {
+                padding: 2rem 1.4rem 2.35rem;
+            }
+
+            .about__title {
+                font-size: 1.75rem;
+            }
+
+            .about__text {
+                font-size: 0.88rem;
+                line-height: 1.72;
             }
         }
 
@@ -869,8 +1018,29 @@
             </article>
         </section>
 
+        <!-- About -->
+        <section class="about" id="a-propos" aria-labelledby="about-title">
+            <div class="about__visual">
+                <img src="developer.webp" alt="Illustration de Bruno, d&eacute;veloppeur ind&eacute;pendant derri&egrave;re ProueStudio" width="1024" height="1024" loading="lazy">
+            </div>
+            <div class="about__content">
+                <p class="about__eyebrow">&Agrave; propos</p>
+                <h2 class="about__title" id="about-title">Un tout petit studio,<br>au sens propre.</h2>
+                <div class="about__text">
+                    <p>ProueStudio, ce n'est pas une grande &eacute;quipe cach&eacute;e derri&egrave;re un joli logo. C'est simplement moi, Bruno&nbsp;: d&eacute;veloppeur ind&eacute;pendant, avec un ordinateur, beaucoup de curiosit&eacute; et l'envie de cr&eacute;er des jeux qui offrent un vrai petit moment d'&eacute;vasion.</p>
+                    <p>Chaque jeu commence par une id&eacute;e un peu trop tenace pour rester dans un carnet. Je la transforme patiemment en une exp&eacute;rience compl&egrave;te, petit d&eacute;tail apr&egrave;s petit d&eacute;tail.</p>
+                    <p>Quand vous t&eacute;l&eacute;chargez un jeu, laissez un avis ou m'&eacute;crivez un message, il n'arrive pas dans une grande machine&nbsp;: il arrive jusqu'&agrave; moi. Et il compte vraiment.</p>
+                    <p class="about__thanks">Merci de faire un bout de chemin avec ProueStudio.</p>
+                </div>
+                <p class="about__signature">Bruno &mdash; cr&eacute;ateur de ProueStudio</p>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer>
+            <nav class="footer__links" aria-label="Communaut&eacute;">
+                <a href="https://discord.gg/gTGxpRgNwx" target="_blank" rel="noopener noreferrer">Discord</a>
+            </nav>
             <p class="footer__copy">&copy; 2026 ProueStudio &mdash; Bruno Faugeroux</p>
         </footer>
     </div>
