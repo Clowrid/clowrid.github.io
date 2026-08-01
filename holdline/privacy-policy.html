@@ -8,7 +8,6 @@
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; background-color: #f9f7f2; }
     h1 { color: #4a4a33; font-size: 1.8em; }
     h2 { color: #5f6b3d; font-size: 1.3em; margin-top: 2em; }
-    h3 { color: #8a9161; font-size: 1.1em; margin-top: 1.2em; }
     p, li { font-size: 0.95em; }
     ul { padding-left: 1.5em; }
     a { color: #5f6b3d; }
@@ -20,130 +19,91 @@
 
 <h1>Politique de confidentialité</h1>
 <p><strong>Holdline WW2 Tower Defense</strong></p>
-<p class="updated">Dernière mise à jour : 20 juillet 2026</p>
+<p class="updated">Dernière mise à jour : 1er août 2026</p>
 <p class="updated"><a href="#english">English version below</a></p>
 
-<p>Proue Studio (ci-après "nous") développe et publie le jeu mobile <strong>Holdline WW2 Tower Defense</strong> (ci-après "le Jeu"), disponible sur Google Play. Cette politique explique quelles données sont traitées quand vous jouez, pourquoi, et quels sont vos droits.</p>
+<p>Proue Studio (Bruno Faugeroux, ci-après « nous ») développe et publie <strong>Holdline WW2 Tower Defense</strong> (ci-après « le Jeu »). Cette politique explique les données techniques traitées lorsque vous utilisez le Jeu.</p>
 
-<p><strong>L'essentiel en bref</strong> : le Jeu n'a pas de compte, ne demande jamais votre nom, votre email ou votre position, et ne contient <strong>aucune publicité</strong>. Les seules données traitées sont des statistiques de jeu anonymes, des rapports de plantage et la validation de vos achats.</p>
+<p><strong>L'essentiel</strong> : le Jeu n'a pas de compte, ne demande jamais votre nom, votre email ou votre position, ne contient aucune publicité et n'utilise aucun outil d'analyse d'audience. Firebase Analytics n'est pas intégré au Jeu. Les seuls traitements distants concernent les rapports de plantage et la validation des achats.</p>
 
 <h2>1. Données traitées</h2>
 
-<h3>Statistiques de jeu anonymes</h3>
-<p>Nous utilisons Google Firebase Analytics pour comprendre comment le Jeu est joué : écrans visités, batailles lancées, gagnées ou abandonnées, tutoriels suivis, achats effectués. Ces événements ne contiennent que des identifiants de contenu du Jeu (par exemple le nom d'une bataille). Aucun identifiant personnel n'y est associé : nous n'utilisons pas d'identifiant utilisateur, ni l'identifiant publicitaire de l'appareil. Firebase attribue à l'application un identifiant d'installation technique, non relié à votre identité.</p>
+<p><strong>Rapports de plantage.</strong> Google Firebase Crashlytics reçoit, lorsqu'une erreur ou un plantage survient, la trace technique, l'état pertinent de l'application, le modèle de l'appareil, les versions du système et du Jeu, ainsi qu'un identifiant d'installation pseudonyme. Pendant une bataille, l'identifiant de la bataille et sa graine de simulation peuvent être joints au rapport afin de reproduire le problème. Aucune statistique de navigation ou de gameplay n'est envoyée.</p>
 
-<h3>Rapports de plantage</h3>
-<p>Google Firebase Crashlytics collecte, en cas de bug, un rapport technique : trace du plantage, modèle d'appareil, version du système, derniers écrans visités et bataille en cours. Ces rapports servent uniquement à corriger les bugs.</p>
+<p><strong>Achats.</strong> Les paiements sont traités par Google Play ; nous ne recevons jamais vos moyens de paiement. Pour activer et restaurer les campagnes, RevenueCat traite un jeton d'achat Google Play associé à un identifiant pseudonyme généré pour l'installation.</p>
+<p>Politique RevenueCat : <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">https://www.revenuecat.com/privacy</a></p>
 
-<h3>Achats</h3>
-<p>Les paiements sont traités entièrement par Google Play : nous ne voyons jamais vos moyens de paiement. Pour activer et restaurer vos achats de campagnes, un jeton d'achat technique est vérifié par notre prestataire RevenueCat, associé à un identifiant anonyme généré par le Jeu.</p>
-<p>Politique de confidentialité de RevenueCat : <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></p>
+<p><strong>Sauvegarde locale.</strong> Votre progression et vos réglages sont enregistrés sur votre appareil. Si les services Play Games sont activés dans une version ultérieure et que vous les utilisez, Google pourra enregistrer votre progression et vos succès selon sa propre politique : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>.</p>
 
-<h3>Sauvegarde et succès (optionnel)</h3>
-<p>Si vous vous connectez aux services de jeux Google Play (Play Games), votre progression peut être sauvegardée dans votre espace Google Drive personnel et vos succès enregistrés par Google. Cette fonctionnalité relève des règles de confidentialité de Google : <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
-
-<h3>Ce que le Jeu ne fait pas</h3>
-<ul>
-  <li>Pas de compte à créer, pas de collecte de nom, d'email, de contacts, de photos ou de position</li>
-  <li>Aucune publicité, aucun SDK publicitaire, aucun usage de l'identifiant publicitaire</li>
-  <li>Pas de suivi entre applications</li>
-  <li>Pas de contenu généré par d'autres joueurs ni d'interactions entre joueurs</li>
-</ul>
+<p>Le Jeu ne collecte pas de nom, email, contacts, photos, fichiers, position ou identifiant publicitaire et n'effectue aucun suivi entre applications.</p>
 
 <h2>2. Finalités et bases légales</h2>
 <ul>
-  <li>Améliorer le Jeu et corriger les bugs (statistiques anonymes, rapports de plantage) : intérêt légitime.</li>
-  <li>Fournir les contenus achetés et les restaurer (jeton d'achat) : exécution du contrat.</li>
+  <li>Détecter, diagnostiquer et corriger les erreurs : intérêt légitime à assurer la stabilité et la sécurité du Jeu.</li>
+  <li>Activer et restaurer les contenus achetés : exécution du contrat.</li>
 </ul>
 
 <h2>3. Destinataires et transferts</h2>
-<p>Les données ci-dessus sont traitées par nos prestataires techniques : Google (Firebase Analytics, Crashlytics, Google Play) et RevenueCat. Ils agissent pour notre compte et n'exploitent pas ces données à leurs propres fins publicitaires. Ces prestataires peuvent traiter des données hors de l'Union européenne, avec les garanties prévues par le RGPD (clauses contractuelles types).</p>
-<p>Politique de confidentialité de Firebase : <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></p>
+<p>Les données sont traitées pour notre compte par Google (Firebase Crashlytics et Google Play) et RevenueCat. Elles peuvent être traitées hors de l'Union européenne avec les garanties contractuelles applicables, notamment les clauses contractuelles types.</p>
+<p>Informations Firebase : <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></p>
 
-<h2>4. Stockage local</h2>
-<p>Votre progression (batailles gagnées, étoiles, cartes de commandement, réglages) est sauvegardée localement sur votre appareil. Elle ne quitte votre appareil que si vous activez la sauvegarde Play Games décrite ci-dessus.</p>
+<h2>4. Durées de conservation</h2>
+<p>Firebase Crashlytics conserve les traces de plantage et leurs identifiants associés pendant 90 jours avant leur suppression de ses systèmes actifs et de sauvegarde. Les données nécessaires à la preuve et à la restauration d'un achat sont conservées aussi longtemps que le droit d'accès correspondant doit pouvoir être fourni, sous réserve des obligations légales applicables.</p>
 
-<h2>5. Durées de conservation</h2>
-<p>Les statistiques de jeu et rapports de plantage sont conservés pour des durées limitées configurées dans Firebase, puis supprimés ou agrégés. Les données liées aux achats sont conservées tant que le droit d'accès au contenu doit pouvoir être restauré.</p>
+<h2>5. Vos droits</h2>
+<p>Vous disposez notamment de droits d'accès, de rectification, d'effacement, de limitation et d'opposition dans les conditions prévues par le RGPD. Les données techniques sont pseudonymes et ne peuvent pas toujours être rapprochées de votre email. Pour toute demande, contactez-nous à l'adresse ci-dessous. Vous pouvez également saisir la CNIL.</p>
 
 <h2>6. Public visé</h2>
-<p>Le Jeu n'est pas destiné aux enfants et ne collecte sciemment aucune donnée les concernant.</p>
+<p>Le Jeu n'est pas destiné aux enfants de moins de 13 ans et ne collecte pas sciemment de données les concernant.</p>
 
-<h2>7. Vos droits (RGPD)</h2>
-<p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez de droits d'accès, de rectification, d'effacement, de limitation et d'opposition. Les statistiques étant anonymes, nous ne pouvons pas les relier à votre personne ; pour toute demande, notamment concernant les achats, écrivez-nous (voir §9). Vous pouvez aussi saisir la CNIL.</p>
-<p>Vous pouvez désactiver l'envoi des statistiques de jeu à tout moment dans les réglages du Jeu (interrupteur « Statistiques de jeu »).</p>
-
-<h2>8. Modifications</h2>
-<p>Cette politique peut évoluer avec le Jeu ; la version publiée à cette adresse fait foi et la date de mise à jour figure en haut de page.</p>
-
-<h2>9. Contact</h2>
-<p>Pour toute question concernant cette politique de confidentialité, vous pouvez nous contacter à :</p>
-<p><strong>Email</strong> : <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a></p>
+<h2>7. Modifications et contact</h2>
+<p>Cette politique peut évoluer avec le Jeu. La version publiée à cette adresse fait foi et sa date de mise à jour figure en tête de page.</p>
+<p><strong>Responsable du traitement</strong> : Proue Studio — Bruno Faugeroux<br><strong>Email</strong> : <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a></p>
 
 <div class="lang-divider" id="english">
 
 <h1>Privacy policy</h1>
 <p><strong>Holdline WW2 Tower Defense</strong></p>
-<p class="updated">Last updated: July 20, 2026</p>
+<p class="updated">Last updated: August 1, 2026</p>
 
-<p>Proue Studio ("we") develops and publishes the mobile game <strong>Holdline WW2 Tower Defense</strong> ("the Game"), available on Google Play. This policy explains what data is processed when you play, why, and what your rights are.</p>
+<p>Proue Studio (Bruno Faugeroux, “we”) develops and publishes <strong>Holdline WW2 Tower Defense</strong> (the “Game”). This policy explains the technical data processed when you use the Game.</p>
 
-<p><strong>In short</strong>: the Game has no account, never asks for your name, email or location, and contains <strong>no ads</strong>. The only data processed is anonymous gameplay statistics, crash reports and purchase validation.</p>
+<p><strong>In short</strong>: the Game has no account, never asks for your name, email or location, contains no advertising, and uses no audience analytics. Firebase Analytics is not included in the Game. The only remote processing concerns crash reports and purchase validation.</p>
 
-<h2>1. Data we process</h2>
+<h2>1. Data processed</h2>
 
-<h3>Anonymous gameplay statistics</h3>
-<p>We use Google Firebase Analytics to understand how the Game is played: screens visited, battles started, won or abandoned, tutorials completed, purchases made. These events only contain game content identifiers (such as a battle name). No personal identifier is attached: we do not use user IDs or the device advertising ID. Firebase assigns the app a technical installation identifier that is not linked to your identity.</p>
+<p><strong>Crash reports.</strong> When an error or crash occurs, Google Firebase Crashlytics receives the technical stack trace, relevant application state, device model, system and Game versions, and a pseudonymous installation identifier. During a battle, the battle identifier and simulation seed may be attached so that the problem can be reproduced. No navigation or gameplay statistics are sent.</p>
 
-<h3>Crash reports</h3>
-<p>Google Firebase Crashlytics collects a technical report when a bug occurs: crash trace, device model, system version, recent screens and current battle. These reports are only used to fix bugs.</p>
+<p><strong>Purchases.</strong> Payments are handled by Google Play; we never receive your payment details. To activate and restore campaigns, RevenueCat processes a Google Play purchase token associated with a pseudonymous identifier generated for the installation.</p>
+<p>RevenueCat privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">https://www.revenuecat.com/privacy</a></p>
 
-<h3>Purchases</h3>
-<p>Payments are handled entirely by Google Play: we never see your payment details. To activate and restore your campaign purchases, a technical purchase token is verified by our provider RevenueCat, linked to an anonymous identifier generated by the Game.</p>
-<p>RevenueCat privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></p>
+<p><strong>Local save.</strong> Your progress and settings are stored on your device. If Play Games services are enabled in a later version and you use them, Google may store your progress and achievements under its own policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>.</p>
 
-<h3>Cloud save and achievements (optional)</h3>
-<p>If you sign in to Google Play Games, your progress may be saved to your personal Google Drive space and your achievements recorded by Google. This feature is governed by Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
-
-<h3>What the Game does not do</h3>
-<ul>
-  <li>No account creation, no collection of name, email, contacts, photos or location</li>
-  <li>No ads, no advertising SDK, no use of the advertising ID</li>
-  <li>No cross-app tracking</li>
-  <li>No user generated content and no interactions between players</li>
-</ul>
+<p>The Game does not collect names, emails, contacts, photos, files, location or advertising identifiers and does not track users across applications.</p>
 
 <h2>2. Purposes and legal bases</h2>
 <ul>
-  <li>Improving the Game and fixing bugs (anonymous statistics, crash reports): legitimate interest.</li>
-  <li>Delivering and restoring purchased content (purchase token): performance of contract.</li>
+  <li>Detecting, diagnosing and fixing errors: legitimate interest in maintaining the stability and security of the Game.</li>
+  <li>Activating and restoring purchased content: performance of contract.</li>
 </ul>
 
 <h2>3. Recipients and transfers</h2>
-<p>The data above is processed by our technical providers: Google (Firebase Analytics, Crashlytics, Google Play) and RevenueCat. They act on our behalf and do not use this data for their own advertising purposes. These providers may process data outside the European Union, with the safeguards required by the GDPR (standard contractual clauses).</p>
-<p>Firebase privacy policy: <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></p>
+<p>Data is processed on our behalf by Google (Firebase Crashlytics and Google Play) and RevenueCat. It may be processed outside the European Union under the applicable contractual safeguards, including standard contractual clauses.</p>
+<p>Firebase information: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></p>
 
-<h2>4. Local storage</h2>
-<p>Your progress (battles won, stars, command cards, settings) is saved locally on your device. It only leaves your device if you enable the Play Games cloud save described above.</p>
+<h2>4. Retention</h2>
+<p>Firebase Crashlytics retains crash stack traces and associated identifiers for 90 days before removing them from its live and backup systems. Data required to prove and restore a purchase is retained for as long as the corresponding access right must remain available, subject to applicable legal obligations.</p>
 
-<h2>5. Retention</h2>
-<p>Gameplay statistics and crash reports are kept for limited periods configured in Firebase, then deleted or aggregated. Purchase related data is kept for as long as access to purchased content must remain restorable.</p>
+<h2>5. Your rights</h2>
+<p>You have rights including access, rectification, erasure, restriction and objection under the GDPR. Technical data is pseudonymous and cannot always be matched to your email. Contact us below for any request. You may also lodge a complaint with your data protection authority.</p>
 
 <h2>6. Children</h2>
-<p>The Game is not directed at children and does not knowingly collect any data about them.</p>
+<p>The Game is not directed at children under 13 and does not knowingly collect data about them.</p>
 
-<h2>7. Your rights (GDPR)</h2>
-<p>Under the GDPR you have rights of access, rectification, erasure, restriction and objection. As statistics are anonymous, we cannot link them to you as a person; for any request, in particular about purchases, contact us (see §9). You may also lodge a complaint with your data protection authority.</p>
-<p>You can disable gameplay statistics at any time in the Game's settings ("Game statistics" switch).</p>
-
-<h2>8. Changes</h2>
-<p>This policy may evolve with the Game; the version published at this address prevails and the update date appears at the top of the page.</p>
-
-<h2>9. Contact</h2>
-<p>For any question about this privacy policy, you can contact us at:</p>
-<p><strong>Email</strong>: <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a></p>
+<h2>7. Changes and contact</h2>
+<p>This policy may evolve with the Game. The version published at this address prevails and its update date appears at the top of the page.</p>
+<p><strong>Data controller</strong>: Proue Studio — Bruno Faugeroux<br><strong>Email</strong>: <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a></p>
 
 </div>
-
 </body>
 </html>
