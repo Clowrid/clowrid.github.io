@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProueStudio &mdash; Nos Jeux</title>
-    <meta name="description" content="ProueStudio - Studio ind&eacute;pendant de jeux mobiles. D&eacute;couvrez Coinquistador, MoMethe et Giga Bang.">
+    <meta name="description" content="ProueStudio - Studio ind&eacute;pendant de jeux mobiles. D&eacute;couvrez Holdline, Coinquistador, MoMethe et Giga Bang.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -41,6 +41,9 @@
             --green-1: #34d399;
             --green-2: #10b981;
             --green-glow: rgba(52, 211, 153, 0.12);
+            --holdline-1: #d6b36a;
+            --holdline-2: #7f8f4c;
+            --holdline-glow: rgba(214, 179, 106, 0.12);
             --radius-xl: 24px;
             --radius-lg: 18px;
             --radius-md: 12px;
@@ -227,6 +230,7 @@
         .game-card:nth-child(1) { animation-delay: 0.25s; }
         .game-card:nth-child(2) { animation-delay: 0.4s; }
         .game-card:nth-child(3) { animation-delay: 0.55s; }
+        .game-card:nth-child(4) { animation-delay: 0.7s; }
 
         .game-card::before {
             content: '';
@@ -248,6 +252,10 @@
 
         .game-card--nature::before {
             background: radial-gradient(ellipse at 50% -20%, rgba(52, 211, 153, 0.08), transparent 70%);
+        }
+
+        .game-card--holdline::before {
+            background: radial-gradient(ellipse at 50% -20%, rgba(214, 179, 106, 0.09), transparent 70%);
         }
 
         .game-card:hover {
@@ -284,6 +292,10 @@
             background: linear-gradient(90deg, transparent, var(--green-1), var(--gold-1), var(--green-1), transparent);
         }
 
+        .game-card--holdline::after {
+            background: linear-gradient(90deg, transparent, var(--holdline-2), var(--holdline-1), var(--holdline-2), transparent);
+        }
+
         /* ── Game badge ── */
         .game-card__badge {
             font-size: 0.65rem;
@@ -313,6 +325,12 @@
             border: 1px solid rgba(52, 211, 153, 0.15);
         }
 
+        .game-card--holdline .game-card__badge {
+            color: var(--holdline-1);
+            background: rgba(214, 179, 106, 0.08);
+            border: 1px solid rgba(214, 179, 106, 0.18);
+        }
+
         /* ── Game name ── */
         .game-card__name {
             font-family: 'Space Grotesk', sans-serif;
@@ -338,6 +356,13 @@
 
         .game-card--nature .game-card__name {
             background: linear-gradient(135deg, var(--green-1), var(--green-2), #6ee7b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .game-card--holdline .game-card__name {
+            background: linear-gradient(135deg, #f2d99b, var(--holdline-1), var(--holdline-2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -377,7 +402,21 @@
             transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
+        .game-card__preview img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            opacity: 0.9;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
         .game-card__preview:hover video {
+            opacity: 1;
+            transform: scale(1.03);
+        }
+
+        .game-card__preview:hover img {
             opacity: 1;
             transform: scale(1.03);
         }
@@ -403,6 +442,15 @@
             opacity: 0;
         }
 
+        .game-card__preview--static {
+            max-width: 360px;
+            cursor: default;
+        }
+
+        .game-card__preview--static::after {
+            content: none;
+        }
+
         .game-card--ocean .game-card__preview {
             max-width: 360px;
             box-shadow: 0 4px 24px rgba(56, 189, 248, 0.12);
@@ -426,6 +474,14 @@
 
         .game-card--nature .game-card__preview:hover {
             box-shadow: 0 8px 40px rgba(52, 211, 153, 0.2);
+        }
+
+        .game-card--holdline .game-card__preview {
+            box-shadow: 0 4px 24px var(--holdline-glow);
+        }
+
+        .game-card--holdline .game-card__preview:hover {
+            box-shadow: 0 8px 40px rgba(214, 179, 106, 0.2);
         }
 
         /* ── QR section ── */
@@ -487,6 +543,10 @@
             box-shadow: 0 10px 40px rgba(52, 211, 153, 0.2);
         }
 
+        .game-card--holdline .qr-item__code:hover {
+            box-shadow: 0 10px 40px rgba(214, 179, 106, 0.2);
+        }
+
         .qr-item__code img {
             display: block;
             width: 140px;
@@ -545,6 +605,17 @@
             background: rgba(52, 211, 153, 0.2);
             border-color: rgba(52, 211, 153, 0.35);
             box-shadow: 0 4px 20px rgba(52, 211, 153, 0.15);
+        }
+
+        .game-card--holdline .qr-item__link {
+            background: rgba(214, 179, 106, 0.1);
+            border: 1px solid rgba(214, 179, 106, 0.22);
+        }
+
+        .game-card--holdline .qr-item__link:hover {
+            background: rgba(214, 179, 106, 0.2);
+            border-color: rgba(214, 179, 106, 0.38);
+            box-shadow: 0 4px 20px var(--holdline-glow);
         }
 
         /* ── Alpha ribbon ── */
@@ -884,6 +955,34 @@
 
         <!-- Games -->
         <section class="games">
+            <!-- Holdline -->
+            <article class="game-card game-card--holdline">
+                <span class="game-card__badge">Tower defense historique</span>
+                <h2 class="game-card__name">Holdline</h2>
+                <p class="game-card__subtitle">WW2 Tower Defense</p>
+                <p class="game-card__desc">
+                    Prends le commandement dans 10 batailles historiques avec un tower defense WW2 narratif, tactique et jouable hors ligne.
+                </p>
+                <div class="game-card__preview game-card__preview--static">
+                    <img src="preview/holdline_poster.png" alt="Bataille historique dans Holdline WW2 Tower Defense" width="1024" height="500">
+                </div>
+                <div class="qr-row">
+                    <div class="qr-item">
+                        <span class="qr-item__label">
+                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
+                            Google Play
+                        </span>
+                        <div class="qr-item__code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.prouestudio.holdline" alt="QR Code Google Play - Holdline" loading="lazy">
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.prouestudio.holdline" class="qr-item__link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.86-.39L15.669 7.2l-2.983 2.983L4.47 1.424zm11.199 5.776L18.1 8.681a1 1 0 0 1 0 1.638l-2.43 1.481-3.178-3.178 3.178-3.178zm-3.178 6.622l3.178 3.178-10.2 5.776-1.098-.622 8.12-8.332z"/></svg>
+                            T&eacute;l&eacute;charger
+                        </a>
+                    </div>
+                </div>
+            </article>
+
             <!-- MoMethe -->
             <article class="game-card game-card--nature">
                 <span class="game-card__badge">Mots m&ecirc;l&eacute;s zen</span>
