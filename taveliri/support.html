@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f0e5">
+  <meta name="description" content="Aide et contact bilingues pour Nombres croisés Taveliri.">
+  <title>Support · Taveliri</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ivory: #f7f0e5;
+      --paper: #fffaf3;
+      --indigo: #202b4a;
+      --indigo-soft: #394565;
+      --lagoon: #176f73;
+      --lagoon-pale: #dceeed;
+      --coral: #d86650;
+      --coral-pale: #f9e3dc;
+      --lilac-pale: #eee8f2;
+      --line: #d9d0c4;
+      --shadow: 0 18px 44px rgba(32, 43, 74, .10);
+      --radius: 24px;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--indigo);
+      background:
+        radial-gradient(circle at 8% 3%, rgba(23, 111, 115, .13), transparent 25rem),
+        radial-gradient(circle at 96% 8%, rgba(216, 102, 80, .12), transparent 22rem),
+        var(--ivory);
+      line-height: 1.65;
+    }
+    a { color: var(--lagoon); text-underline-offset: .18em; }
+    a:hover { color: var(--coral); }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 12px;
+      left: 12px;
+      padding: 10px 14px;
+      color: #fff;
+      background: var(--indigo);
+      border-radius: 10px;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .masthead {
+      width: min(1180px, calc(100% - 32px));
+      margin: 20px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--indigo);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+    .brand svg { width: 46px; height: 46px; flex: none; }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    nav a {
+      display: block;
+      padding: 8px 12px;
+      color: var(--indigo-soft);
+      border-radius: 999px;
+      font-size: .94rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    nav a:hover, nav a[aria-current="page"] { color: var(--indigo); background: var(--lagoon-pale); }
+    .shell { width: min(1180px, calc(100% - 32px)); margin: 28px auto 64px; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 6vw, 68px);
+      background: var(--paper);
+      border: 1px solid rgba(32, 43, 74, .09);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: "?";
+      position: absolute;
+      right: clamp(20px, 5vw, 70px);
+      bottom: -42px;
+      color: rgba(23, 111, 115, .10);
+      font: 900 clamp(11rem, 25vw, 19rem)/1 Georgia, serif;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--lagoon);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.18; letter-spacing: -.025em; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(2.2rem, 7vw, 4.8rem); }
+    .lede { max-width: 760px; margin: 18px 0 0; color: var(--indigo-soft); font-size: clamp(1.05rem, 2vw, 1.25rem); }
+    .contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 16px;
+      color: #fff;
+      background: var(--lagoon);
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .button:hover { color: #fff; background: var(--coral); }
+    .button svg { width: 19px; height: 19px; }
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 22px;
+      align-items: start;
+    }
+    article {
+      padding: clamp(22px, 4vw, 38px);
+      background: rgba(255, 250, 243, .92);
+      border: 1px solid rgba(32, 43, 74, .10);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(32, 43, 74, .07);
+    }
+    article > header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    article > header h2 { margin: 0; font-size: clamp(1.55rem, 3vw, 2rem); }
+    .language-tag {
+      padding: 5px 9px;
+      color: var(--lagoon);
+      background: var(--lagoon-pale);
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h3 { margin: 24px 0 8px; font-size: 1.14rem; }
+    p { margin: 0 0 12px; }
+    ol, ul { padding-left: 1.25rem; }
+    li + li { margin-top: 7px; }
+    details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    details + details { margin-top: 10px; }
+    summary {
+      cursor: pointer;
+      padding: 15px 42px 15px 16px;
+      font-weight: 800;
+      list-style: none;
+      position: relative;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 16px;
+      top: 10px;
+      color: var(--lagoon);
+      font-size: 1.45rem;
+    }
+    details[open] summary::after { content: "−"; }
+    details > div { padding: 0 16px 16px; color: var(--indigo-soft); }
+    .steps {
+      margin: 18px 0;
+      padding: 18px 20px;
+      background: var(--lilac-pale);
+      border-radius: 16px;
+    }
+    .steps h3 { margin-top: 0; }
+    .warning {
+      margin: 18px 0;
+      padding: 16px 18px;
+      background: var(--coral-pale);
+      border-left: 5px solid var(--coral);
+      border-radius: 12px;
+    }
+    footer {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto 36px;
+      padding-top: 20px;
+      color: var(--indigo-soft);
+      border-top: 1px solid var(--line);
+      font-size: .88rem;
+    }
+    footer p { margin: 4px 0; }
+    @media (max-width: 860px) {
+      .masthead { align-items: flex-start; flex-direction: column; }
+      nav ul { justify-content: flex-start; }
+      .language-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .masthead, .shell, footer { width: min(100% - 22px, 1180px); }
+      nav a { padding: 7px 9px; font-size: .86rem; }
+      .hero { border-radius: 24px; }
+      article { border-radius: 20px; }
+      article > header { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      body { background: #fff; }
+      .skip-link, nav { display: none; }
+      .shell, footer, .masthead { width: 100%; }
+      .hero, article { box-shadow: none; }
+      .language-grid { display: block; }
+      article { margin-top: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu · Skip to content</a>
+  <header class="masthead">
+    <a class="brand" href="support.html" aria-label="Taveliri, accueil du support">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="3" y="3" width="58" height="58" rx="18" fill="#fffaf3" stroke="#202b4a" stroke-width="2"/>
+        <path d="M15 15 49 49M49 15 15 49" fill="none" stroke="#176f73" stroke-width="7" stroke-linecap="round"/>
+        <path d="M32 32 49 49M32 32 15 49" fill="none" stroke="#d86650" stroke-width="7" stroke-linecap="round"/>
+        <rect x="25" y="25" width="14" height="14" rx="4" fill="#dceeed" stroke="#202b4a" stroke-width="2"/>
+      </svg>
+      <span>Taveliri</span>
+    </a>
+    <nav aria-label="Pages légales · Legal pages">
+      <ul>
+        <li><a href="privacy-policy.html">Confidentialité</a></li>
+        <li><a href="support.html" aria-current="page">Support</a></li>
+        <li><a href="terms.html">Conditions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="shell" id="contenu">
+    <section class="hero" aria-labelledby="titre-page">
+      <p class="eyebrow">Nombres croisés Taveliri</p>
+      <h1 id="titre-page">Aide et support</h1>
+      <p class="lede">Restauration d’achat, jeu hors connexion, sauvegardes locales et réponses aux questions courantes.</p>
+      <div class="contact-strip">
+        <a class="button" href="mailto:prouestudio@gmail.com?subject=Taveliri%20-%20Support">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 6 9 6 9-6M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"/></svg>
+          prouestudio@gmail.com
+        </a>
+        <a class="button" href="https://discord.gg/gTGxpRgNwx">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8.5 8.5a7 7 0 0 1 7 0M7 17l-3 2 1-4a9 9 0 1 1 3 3M9 12h.01M15 12h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Discord
+        </a>
+        <span>Français et anglais · French and English</span>
+      </div>
+    </section>
+
+    <div class="language-grid">
+      <article lang="fr" aria-labelledby="support-fr">
+        <header>
+          <h2 id="support-fr">Assistance en français</h2>
+          <span class="language-tag">FR</span>
+        </header>
+
+        <div class="steps">
+          <h3>Restaurer l’achat illimité</h3>
+          <ol>
+            <li>Connectez l’appareil à Internet.</li>
+            <li>Vérifiez que vous utilisez le même compte Apple App Store ou Google Play que lors de l’achat.</li>
+            <li>Dans Taveliri, ouvrez <strong>Réglages</strong>, puis touchez <strong>Restaurer mes achats</strong>. Le même bouton est disponible sur l’écran du mode illimité.</li>
+            <li>Attendez la confirmation du Store. Aucun nouvel achat ne sera facturé pendant une restauration.</li>
+          </ol>
+          <p>L’achat est lié au compte Store et à la plateforme. Il n’est pas transféré d’Android vers iOS.</p>
+        </div>
+
+        <h3>Questions fréquentes</h3>
+
+        <details>
+          <summary>Que comprend la version gratuite ?</summary>
+          <div><p>Deux nouvelles grilles sont disponibles gratuitement chaque jour : Détente et Défi. Toutes les aides de jeu restent accessibles. Une grille commencée peut être reprise pendant sa fenêtre prévue.</p></div>
+        </details>
+
+        <details>
+          <summary>Que débloque l’achat unique ?</summary>
+          <div><p>Il débloque définitivement le mode libre sur la plateforme d’achat : grilles de 6 × 6 à 13 × 13 et quatre difficultés. Ce n’est ni un abonnement ni un consommable.</p></div>
+        </details>
+
+        <details>
+          <summary>Taveliri fonctionne-t-il hors connexion ?</summary>
+          <div><p>Oui pour le tutoriel, les grilles, les sauvegardes et les statistiques. Une connexion est nécessaire pour acheter, restaurer ou actualiser le statut de l’achat.</p></div>
+        </details>
+
+        <details>
+          <summary>Puis-je transférer ma progression sur un autre appareil ?</summary>
+          <div><p>Non. La progression et les statistiques sont enregistrées uniquement sur l’appareil. Il n’existe actuellement ni compte ni synchronisation distante. L’achat peut toutefois être restauré sur la même plateforme avec le même compte Store.</p></div>
+        </details>
+
+        <details>
+          <summary>Pourquoi une grille quotidienne a-t-elle disparu ?</summary>
+          <div><p>Une grille non commencée expire au changement de jour. Une grille commencée dispose d’une période de grâce limitée, puis expire pour éviter la création d’une archive gratuite cumulative.</p></div>
+        </details>
+
+        <details>
+          <summary>Mon achat est en attente ou a été remboursé</summary>
+          <div><p>Un achat en attente n’ouvre l’accès qu’après confirmation du Store. Après remboursement ou révocation, le mode illimité peut être retiré lors de la prochaine vérification. Consultez d’abord l’historique d’achats de votre compte Apple ou Google.</p></div>
+        </details>
+
+        <details>
+          <summary>Comment effacer mes données ?</summary>
+          <div><p>Les données de jeu sont locales : effacez les données de l’application dans les réglages du système ou désinstallez-la. Pour demander la suppression d’un enregistrement pseudonyme RevenueCat, suivez la procédure ci-dessous.</p></div>
+        </details>
+
+        <details>
+          <summary>L’application est-elle destinée aux enfants ?</summary>
+          <div><p>Taveliri convient à un public général, mais n’est pas conçu ou commercialisé spécifiquement pour les enfants. Il n’intègre ni publicité, ni messagerie, ni contenu publié par les utilisateurs.</p></div>
+        </details>
+
+        <h3>Demande de suppression</h3>
+        <p>Écrivez à <a href="mailto:prouestudio@gmail.com?subject=Taveliri%20-%20Suppression%20des%20donn%C3%A9es">prouestudio@gmail.com</a> avec l’objet « Taveliri - Suppression des données ». Indiquez :</p>
+        <ul>
+          <li>Android ou iOS ;</li>
+          <li>la date approximative de l’achat, si applicable ;</li>
+          <li>l’identifiant support pseudonyme, s’il est affiché dans votre version de l’application.</li>
+        </ul>
+        <div class="warning"><strong>Ne transmettez jamais</strong> de mot de passe, numéro de carte, coordonnées bancaires ou copie complète d’une pièce d’identité par email.</div>
+
+        <h3>Signaler un problème</h3>
+        <p>Contactez-nous par <a href="mailto:prouestudio@gmail.com?subject=Taveliri%20-%20Support">e-mail</a> ou sur <a href="https://discord.gg/gTGxpRgNwx">Discord</a>. Pour nous aider à reproduire un défaut, précisez la plateforme, le modèle d’appareil, la version du système, la version de Taveliri, la langue utilisée et les étapes ayant mené au problème. Une capture sans information sensible peut être jointe.</p>
+        <p>Pour une difficulté d’accessibilité, indiquez la technologie utilisée, par exemple VoiceOver, TalkBack, taille de texte agrandie ou navigation au clavier.</p>
+      </article>
+
+      <article lang="en" aria-labelledby="support-en">
+        <header>
+          <h2 id="support-en">Support in English</h2>
+          <span class="language-tag">EN</span>
+        </header>
+
+        <div class="steps">
+          <h3>Restore unlimited play</h3>
+          <ol>
+            <li>Connect the device to the Internet.</li>
+            <li>Make sure you use the same Apple App Store or Google Play account used for the original purchase.</li>
+            <li>In Taveliri, open <strong>Settings</strong>, then select <strong>Restore purchases</strong>. The same button is available on the unlimited-play screen.</li>
+            <li>Wait for Store confirmation. Restoring does not create a new charge.</li>
+          </ol>
+          <p>The purchase is tied to the Store account and platform. It does not transfer from Android to iOS.</p>
+        </div>
+
+        <h3>Frequently asked questions</h3>
+
+        <details>
+          <summary>What is included for free?</summary>
+          <div><p>Two new puzzles are available for free each day: Relax and Challenge. All gameplay aids remain available. A started puzzle can be resumed during its stated availability window.</p></div>
+        </details>
+
+        <details>
+          <summary>What does the one-time purchase unlock?</summary>
+          <div><p>It permanently unlocks Free play on the purchase platform: grid sizes from 6 × 6 through 13 × 13 and four difficulty levels. It is neither a subscription nor a consumable.</p></div>
+        </details>
+
+        <details>
+          <summary>Does Taveliri work offline?</summary>
+          <div><p>Yes for the tutorial, puzzles, saves and statistics. A connection is required to buy, restore or refresh purchase status.</p></div>
+        </details>
+
+        <details>
+          <summary>Can I transfer progress to another device?</summary>
+          <div><p>No. Progress and statistics are stored only on the device. There is currently no account or cloud sync. The purchase can still be restored on the same platform with the same Store account.</p></div>
+        </details>
+
+        <details>
+          <summary>Why did a daily puzzle disappear?</summary>
+          <div><p>An unstarted puzzle expires when the day changes. A started puzzle has a limited grace period and then expires so the free offer does not become a cumulative archive.</p></div>
+        </details>
+
+        <details>
+          <summary>My purchase is pending or was refunded</summary>
+          <div><p>A pending purchase unlocks access only after Store confirmation. After a refund or revocation, unlimited mode may be removed at the next check. First review the purchase history for your Apple or Google account.</p></div>
+        </details>
+
+        <details>
+          <summary>How do I erase my data?</summary>
+          <div><p>Game data is local: clear the app data in system settings or uninstall the app. To request deletion of a pseudonymous RevenueCat record, follow the procedure below.</p></div>
+        </details>
+
+        <details>
+          <summary>Is the app intended for children?</summary>
+          <div><p>Taveliri is suitable for a general audience but is not specifically designed or marketed for children. It includes no advertising, messaging or user-published content.</p></div>
+        </details>
+
+        <h3>Deletion request</h3>
+        <p>Email <a href="mailto:prouestudio@gmail.com?subject=Taveliri%20-%20Data%20deletion">prouestudio@gmail.com</a> with the subject “Taveliri - Data deletion”. Include:</p>
+        <ul>
+          <li>Android or iOS;</li>
+          <li>the approximate purchase date, if applicable;</li>
+          <li>the pseudonymous support identifier, if displayed by your app version.</li>
+        </ul>
+        <div class="warning"><strong>Never send</strong> a password, card number, banking information or a complete identity document by email.</div>
+
+        <h3>Report a problem</h3>
+        <p>Contact us by <a href="mailto:prouestudio@gmail.com?subject=Taveliri%20-%20Support">email</a> or on <a href="https://discord.gg/gTGxpRgNwx">Discord</a>. To help reproduce an issue, include the platform, device model, operating-system version, Taveliri version, selected language and steps leading to the problem. You may attach a screenshot that contains no sensitive information.</p>
+        <p>For an accessibility issue, mention the technology used, such as VoiceOver, TalkBack, larger text or keyboard navigation.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Taveliri</strong> · <a href="privacy-policy.html">Confidentialité · Privacy</a> · <a href="terms.html">Conditions · Terms</a></p>
+    <p>Éditeur · Publisher: ProueStudio · <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a> · <a href="https://discord.gg/gTGxpRgNwx">Discord</a></p>
+  </footer>
+</body>
+</html>

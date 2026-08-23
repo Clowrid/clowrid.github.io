@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f0e5">
+  <meta name="description" content="Politique de confidentialité bilingue de Nombres croisés Taveliri.">
+  <title>Confidentialité · Taveliri</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ivory: #f7f0e5;
+      --paper: #fffaf3;
+      --indigo: #202b4a;
+      --indigo-soft: #394565;
+      --lagoon: #176f73;
+      --lagoon-pale: #dceeed;
+      --coral: #d86650;
+      --coral-pale: #f9e3dc;
+      --lilac: #9584aa;
+      --line: #d9d0c4;
+      --shadow: 0 18px 44px rgba(32, 43, 74, .10);
+      --radius: 24px;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--indigo);
+      background:
+        radial-gradient(circle at 8% 3%, rgba(23, 111, 115, .13), transparent 25rem),
+        radial-gradient(circle at 96% 8%, rgba(216, 102, 80, .12), transparent 22rem),
+        var(--ivory);
+      line-height: 1.65;
+    }
+    a { color: var(--lagoon); text-underline-offset: .18em; }
+    a:hover { color: var(--coral); }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 12px;
+      left: 12px;
+      padding: 10px 14px;
+      color: #fff;
+      background: var(--indigo);
+      border-radius: 10px;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .masthead {
+      width: min(1180px, calc(100% - 32px));
+      margin: 20px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--indigo);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+    .brand svg { width: 46px; height: 46px; flex: none; }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    nav a {
+      display: block;
+      padding: 8px 12px;
+      color: var(--indigo-soft);
+      border-radius: 999px;
+      font-size: .94rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    nav a:hover, nav a[aria-current="page"] {
+      color: var(--indigo);
+      background: var(--lagoon-pale);
+    }
+    .shell { width: min(1180px, calc(100% - 32px)); margin: 28px auto 64px; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 6vw, 68px);
+      background: var(--paper);
+      border: 1px solid rgba(32, 43, 74, .09);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -92px;
+      bottom: -116px;
+      border: 30px solid rgba(23, 111, 115, .12);
+      border-radius: 44% 56% 56% 44%;
+      transform: rotate(45deg);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--lagoon);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.18; letter-spacing: -.025em; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(2.2rem, 7vw, 4.8rem); }
+    .lede { max-width: 760px; margin: 18px 0 0; color: var(--indigo-soft); font-size: clamp(1.05rem, 2vw, 1.25rem); }
+    .updated { margin: 22px 0 0; font-size: .9rem; font-weight: 700; }
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 22px;
+      align-items: start;
+    }
+    article {
+      padding: clamp(22px, 4vw, 38px);
+      background: rgba(255, 250, 243, .92);
+      border: 1px solid rgba(32, 43, 74, .10);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(32, 43, 74, .07);
+    }
+    article > header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    article > header h2 { margin: 0; font-size: clamp(1.55rem, 3vw, 2rem); }
+    .language-tag {
+      padding: 5px 9px;
+      color: var(--lagoon);
+      background: var(--lagoon-pale);
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    section { padding-top: 18px; }
+    section + section { margin-top: 18px; border-top: 1px solid var(--line); }
+    h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    p { margin: 0 0 12px; }
+    ul { padding-left: 1.25rem; }
+    li + li { margin-top: 6px; }
+    .callout {
+      margin: 16px 0;
+      padding: 16px 18px;
+      background: var(--lagoon-pale);
+      border-left: 5px solid var(--lagoon);
+      border-radius: 12px;
+    }
+    .contact-card {
+      margin-top: 22px;
+      padding: 22px;
+      color: #fff;
+      background: var(--indigo);
+      border-radius: 20px;
+    }
+    .contact-card a { color: #bde7e4; }
+    footer {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto 36px;
+      padding-top: 20px;
+      color: var(--indigo-soft);
+      border-top: 1px solid var(--line);
+      font-size: .88rem;
+    }
+    footer p { margin: 4px 0; }
+    @media (max-width: 860px) {
+      .masthead { align-items: flex-start; flex-direction: column; }
+      nav ul { justify-content: flex-start; }
+      .language-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .masthead, .shell, footer { width: min(100% - 22px, 1180px); }
+      nav a { padding: 7px 9px; font-size: .86rem; }
+      .hero { border-radius: 24px; }
+      article { border-radius: 20px; }
+      article > header { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      body { background: #fff; }
+      .skip-link, nav { display: none; }
+      .shell, footer, .masthead { width: 100%; }
+      .hero, article { box-shadow: none; }
+      .language-grid { display: block; }
+      article { margin-top: 18px; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu · Skip to content</a>
+  <header class="masthead">
+    <a class="brand" href="support.html" aria-label="Taveliri, accueil du support">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="3" y="3" width="58" height="58" rx="18" fill="#fffaf3" stroke="#202b4a" stroke-width="2"/>
+        <path d="M15 15 49 49M49 15 15 49" fill="none" stroke="#176f73" stroke-width="7" stroke-linecap="round"/>
+        <path d="M32 32 49 49M32 32 15 49" fill="none" stroke="#d86650" stroke-width="7" stroke-linecap="round"/>
+        <rect x="25" y="25" width="14" height="14" rx="4" fill="#dceeed" stroke="#202b4a" stroke-width="2"/>
+      </svg>
+      <span>Taveliri</span>
+    </a>
+    <nav aria-label="Pages légales · Legal pages">
+      <ul>
+        <li><a href="privacy-policy.html" aria-current="page">Confidentialité</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="terms.html">Conditions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="shell" id="contenu">
+    <section class="hero" aria-labelledby="titre-page">
+      <p class="eyebrow">Nombres croisés Taveliri</p>
+      <h1 id="titre-page">Politique de confidentialité</h1>
+      <p class="lede">Une présentation transparente des données utilisées par l’application, suivie de sa version anglaise complète.</p>
+      <p class="updated">Dernière mise à jour · Last updated: 23 août 2026 · 23 August 2026</p>
+    </section>
+
+    <div class="language-grid">
+      <article lang="fr" aria-labelledby="politique-fr">
+        <header>
+          <h2 id="politique-fr">Version française</h2>
+          <span class="language-tag">FR</span>
+        </header>
+
+        <section>
+          <h3>1. Responsable et périmètre</h3>
+          <p>Cette politique concerne l’application <strong>Nombres croisés Taveliri</strong> sur Android et iOS, ainsi que ces pages d’information. L’éditeur est <strong>ProueStudio</strong>, joignable par e-mail à <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a> et via le <a href="https://discord.gg/gTGxpRgNwx">serveur Discord de support</a>.</p>
+          <p>Taveliri est un jeu de logique destiné à un public général. Il n’est pas conçu spécifiquement pour les enfants et ne crée aucun compte joueur.</p>
+        </section>
+
+        <section>
+          <h3>2. Ce que Taveliri ne fait pas</h3>
+          <ul>
+            <li>Aucune publicité et aucun SDK publicitaire.</li>
+            <li>Aucun suivi entre applications ou sites, aucun profil publicitaire et aucune demande ATT.</li>
+            <li>Aucun compte, profil public, classement, messagerie ou contenu publié par les joueurs.</li>
+            <li>Aucune collecte de contacts, localisation, photos, fichiers, microphone ou informations de santé.</li>
+            <li>Aucun transfert de progression entre appareils ou plateformes.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>3. Données de jeu conservées localement</h3>
+          <p>Les parties, valeurs saisies, candidats, sauvegardes, préférences, progression du tutoriel, statistiques, historique des grilles et état du quota quotidien sont enregistrés uniquement sur l’appareil. Ils ne sont pas envoyés à ProueStudio ni à un service d’analyse.</p>
+          <p>Ces données restent jusqu’à leur suppression par l’application, l’effacement de ses données ou sa désinstallation. Une désinstallation peut les supprimer définitivement. Taveliri ne propose actuellement aucune synchronisation ou sauvegarde distante de la progression.</p>
+        </section>
+
+        <section>
+          <h3>4. Achat unique et prestataires</h3>
+          <p>Le mode libre illimité est proposé sous la forme d’un achat intégré non consommable. Le paiement est traité par <strong>Apple App Store</strong> ou <strong>Google Play</strong>. ProueStudio ne reçoit jamais le numéro de carte, les coordonnées bancaires ni les identifiants du compte Store.</p>
+          <p><strong>RevenueCat</strong> est utilisé pour vérifier l’achat et maintenir l’accès. À cette fin, RevenueCat peut traiter :</p>
+          <ul>
+            <li>un identifiant d’application pseudonyme généré pour le client ;</li>
+            <li>l’historique et le statut de l’achat ;</li>
+            <li>le reçu Apple ou le jeton d’achat Google ;</li>
+            <li>des informations techniques nécessaires, telles que plateforme, version du système, version de l’application, langue, devise, adresse IP et horodatages.</li>
+          </ul>
+          <p>Ces informations servent à valider et restaurer l’achat, détecter la fraude, traiter les remboursements ou révocations, assurer le support et produire des mesures agrégées liées aux achats. Elles ne sont pas utilisées par Taveliri pour la publicité ou le suivi inter-applications.</p>
+          <div class="callout"><strong>Portée de la restauration.</strong> L’achat peut être restauré avec le même compte Store sur la même plateforme. Aucun transfert Android vers iOS, ni transfert de progression, n’est promis.</div>
+        </section>
+
+        <section>
+          <h3>5. Base juridique et sécurité</h3>
+          <p>Le traitement des informations d’achat est nécessaire à l’exécution de l’achat et à la fourniture du mode illimité. La prévention de la fraude, la sécurité et le support relèvent également de l’intérêt légitime de l’éditeur, dans le respect de vos droits.</p>
+          <p>Les communications avec RevenueCat, Apple et Google sont protégées en transit par TLS. Les données locales bénéficient des protections fournies par le système de l’appareil. Aucun système ne pouvant être garanti absolument sûr, signalez toute inquiétude à l’adresse de contact.</p>
+        </section>
+
+        <section>
+          <h3>6. Conservation, destinataires et transferts</h3>
+          <p>Les données de jeu locales suivent la durée décrite ci-dessus. Les informations d’achat sont conservées par RevenueCat et les Stores pendant les durées nécessaires au fonctionnement, à la sécurité, aux obligations comptables et aux exigences légales, conformément à leurs propres politiques et aux accords applicables.</p>
+          <p>RevenueCat, Apple et Google peuvent traiter des données depuis des pays situés hors de l’Espace économique européen. Ils sont responsables de mettre en place les garanties de transfert applicables à leurs services. Aucune information d’achat n’est vendue par Taveliri.</p>
+        </section>
+
+        <section>
+          <h3>7. Vos droits et suppression</h3>
+          <p>Selon votre lieu de résidence, notamment dans l’Union européenne, vous pouvez demander l’accès, la rectification, l’effacement, la limitation ou l’opposition, ainsi que la portabilité lorsque celle-ci s’applique. Vous pouvez aussi saisir votre autorité de protection des données.</p>
+          <p>Pour une demande liée aux données RevenueCat, écrivez à <a href="mailto:prouestudio@gmail.com?subject=Taveliri%20-%20Donn%C3%A9es%20personnelles">prouestudio@gmail.com</a> avec l’objet « Taveliri - Données personnelles ». Indiquez la plateforme, la date approximative de l’achat et, s’il est disponible, l’identifiant support pseudonyme. N’envoyez jamais de mot de passe ni de données bancaires.</p>
+          <p>Les données de jeu locales peuvent être supprimées en effaçant les données de l’application ou en la désinstallant. Une demande adressée à ProueStudio ne peut pas effacer des données de transaction que la loi oblige Apple ou Google à conserver.</p>
+        </section>
+
+        <section>
+          <h3>8. Site, cookies et mises à jour</h3>
+          <p>Ces pages statiques ne déposent aucun cookie, ne chargent aucune ressource distante et n’intègrent aucun outil de mesure d’audience. Cette politique pourra évoluer si les pratiques ou la loi changent. La date affichée en tête sera alors mise à jour.</p>
+        </section>
+
+        <div class="contact-card">
+          <strong>Contact confidentialité</strong><br>
+          ProueStudio · <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a> · <a href="https://discord.gg/gTGxpRgNwx">Discord</a>
+        </div>
+      </article>
+
+      <article lang="en" aria-labelledby="policy-en">
+        <header>
+          <h2 id="policy-en">English version</h2>
+          <span class="language-tag">EN</span>
+        </header>
+
+        <section>
+          <h3>1. Controller and scope</h3>
+          <p>This policy covers the <strong>Cross Numbers Taveliri</strong> application on Android and iOS, as well as these information pages. The publisher is <strong>ProueStudio</strong>, reachable by email at <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a> and through the <a href="https://discord.gg/gTGxpRgNwx">support Discord server</a>.</p>
+          <p>Taveliri is a logic game for a general audience. It is not specifically designed for children and does not create player accounts.</p>
+        </section>
+
+        <section>
+          <h3>2. What Taveliri does not do</h3>
+          <ul>
+            <li>No advertising and no advertising SDK.</li>
+            <li>No tracking across apps or websites, no advertising profile and no ATT request.</li>
+            <li>No account, public profile, leaderboard, messaging or player-published content.</li>
+            <li>No collection of contacts, location, photos, files, microphone or health information.</li>
+            <li>No progress transfer between devices or platforms.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>3. Game data stored locally</h3>
+          <p>Games, entered values, candidates, saves, preferences, tutorial progress, statistics, puzzle history and daily quota status are stored only on the device. They are not sent to ProueStudio or to an analytics service.</p>
+          <p>They remain until removed by the app, the app data is cleared, or the app is uninstalled. Uninstalling may permanently delete them. Taveliri currently provides no cloud sync or remote backup of progress.</p>
+        </section>
+
+        <section>
+          <h3>4. One-time purchase and providers</h3>
+          <p>Unlimited free play is offered as a non-consumable In-App Purchase. Payment is handled by the <strong>Apple App Store</strong> or <strong>Google Play</strong>. ProueStudio never receives card numbers, banking details or Store account credentials.</p>
+          <p><strong>RevenueCat</strong> is used to verify the purchase and maintain access. For this purpose, RevenueCat may process:</p>
+          <ul>
+            <li>a pseudonymous app identifier generated for the customer;</li>
+            <li>purchase history and status;</li>
+            <li>the Apple receipt or Google purchase token;</li>
+            <li>necessary technical information such as platform, operating-system version, app version, language, currency, IP address and timestamps.</li>
+          </ul>
+          <p>This information is used to validate and restore purchases, prevent fraud, process refunds or revocations, provide support and produce aggregate purchase-related metrics. Taveliri does not use it for advertising or cross-app tracking.</p>
+          <div class="callout"><strong>Restore scope.</strong> A purchase can be restored with the same Store account on the same platform. No Android-to-iOS purchase transfer or progress transfer is promised.</div>
+        </section>
+
+        <section>
+          <h3>5. Legal basis and security</h3>
+          <p>Processing purchase information is necessary to perform the purchase and provide unlimited mode. Fraud prevention, security and support also serve the publisher’s legitimate interests while respecting your rights.</p>
+          <p>Communications with RevenueCat, Apple and Google are protected in transit using TLS. Local data benefits from the protections provided by the device operating system. No system can be guaranteed completely secure; please report any concern to the contact address.</p>
+        </section>
+
+        <section>
+          <h3>6. Retention, recipients and transfers</h3>
+          <p>Local game data follows the retention period described above. RevenueCat and the Stores retain purchase information for the periods needed for operation, security, accounting duties and legal requirements, under their own policies and applicable agreements.</p>
+          <p>RevenueCat, Apple and Google may process data from countries outside the European Economic Area. They are responsible for putting the safeguards applicable to their services in place. Taveliri does not sell purchase information.</p>
+        </section>
+
+        <section>
+          <h3>7. Your rights and deletion</h3>
+          <p>Depending on where you live, including in the European Union, you may request access, correction, deletion, restriction or objection, and portability where applicable. You may also complain to your data-protection authority.</p>
+          <p>For a RevenueCat data request, email <a href="mailto:prouestudio@gmail.com?subject=Taveliri%20-%20Privacy%20request">prouestudio@gmail.com</a> with the subject “Taveliri - Privacy request”. Include the platform, approximate purchase date and, if available, the pseudonymous support identifier. Never send a password or banking information.</p>
+          <p>Local game data can be removed by clearing app data or uninstalling the app. A request to ProueStudio cannot erase transaction records that Apple or Google must retain by law.</p>
+        </section>
+
+        <section>
+          <h3>8. Website, cookies and updates</h3>
+          <p>These static pages set no cookies, load no remote resources and include no audience-measurement tool. This policy may change if practices or law change. The date at the top will then be updated.</p>
+        </section>
+
+        <div class="contact-card">
+          <strong>Privacy contact</strong><br>
+          ProueStudio · <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a> · <a href="https://discord.gg/gTGxpRgNwx">Discord</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Taveliri</strong> · Jeu de logique numérique · Crossed-number logic game</p>
+    <p>Éditeur · Publisher: ProueStudio · <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a> · <a href="https://discord.gg/gTGxpRgNwx">Discord</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#202b4a">
+  <meta name="description" content="Conditions d’utilisation de Taveliri · Terms of Use for Taveliri.">
+  <title>Conditions d’utilisation · Taveliri</title>
+  <style>
+    :root {
+      --ivory: #f7f0e5;
+      --paper: #fffaf3;
+      --indigo: #202b4a;
+      --indigo-soft: #394565;
+      --lagoon: #176f73;
+      --lagoon-pale: #dceeed;
+      --coral: #d86650;
+      --coral-pale: #f9e3dc;
+      --line: #d9d0c3;
+      --shadow: 0 18px 50px rgba(32, 43, 74, 0.12);
+      --radius: 1.25rem;
+      --content: 74rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--indigo);
+      background:
+        radial-gradient(circle at 10% 6%, rgba(216, 102, 80, 0.13), transparent 24rem),
+        radial-gradient(circle at 94% 24%, rgba(23, 111, 115, 0.14), transparent 25rem),
+        var(--ivory);
+      font-family: ui-rounded, "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--lagoon);
+      text-underline-offset: 0.18em;
+      text-decoration-thickness: 0.09em;
+    }
+
+    a:hover {
+      color: var(--coral);
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 0.2rem solid var(--coral);
+      outline-offset: 0.22rem;
+      border-radius: 0.2rem;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.65rem 0.9rem;
+      color: #fff;
+      background: var(--indigo);
+      border-radius: 0.5rem;
+      transform: translateY(-180%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid rgba(32, 43, 74, 0.12);
+      background: rgba(255, 250, 243, 0.9);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 2rem), var(--content));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 0.9rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--indigo);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 2.75rem;
+      height: 2.75rem;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 0.25rem 0.45rem rgba(32, 43, 74, 0.16));
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.35rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.5rem 0.7rem;
+      color: var(--indigo-soft);
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--indigo);
+      background: var(--lagoon-pale);
+    }
+
+    main {
+      width: min(calc(100% - 2rem), var(--content));
+      margin-inline: auto;
+      padding-block: clamp(2rem, 6vw, 5rem);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 2rem;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      color: #fff;
+      background: var(--indigo);
+      border-radius: calc(var(--radius) + 0.5rem);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 18rem;
+      height: 18rem;
+      right: -7rem;
+      bottom: -10rem;
+      border: 2.6rem solid rgba(23, 111, 115, 0.52);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.45rem;
+      color: #93d6d2;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 18ch;
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 4.5rem);
+      letter-spacing: -0.04em;
+    }
+
+    .hero p:last-child {
+      max-width: 48rem;
+      margin: 1rem 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .hero-symbol {
+      position: relative;
+      z-index: 1;
+      width: clamp(7rem, 17vw, 11rem);
+      aspect-ratio: 1;
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .language-panel {
+      min-width: 0;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      background: rgba(255, 250, 243, 0.96);
+      border: 1px solid rgba(32, 43, 74, 0.12);
+      border-radius: var(--radius);
+      box-shadow: 0 0.7rem 2rem rgba(32, 43, 74, 0.07);
+    }
+
+    .language-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--lagoon-pale);
+    }
+
+    .language-heading h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    .language-tag {
+      flex: 0 0 auto;
+      padding: 0.3rem 0.65rem;
+      color: #fff;
+      background: var(--lagoon);
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+    }
+
+    section + section {
+      margin-top: 1.7rem;
+      padding-top: 1.55rem;
+      border-top: 1px solid var(--line);
+    }
+
+    section h3 {
+      margin: 0 0 0.7rem;
+      color: var(--indigo);
+      font-size: 1.08rem;
+    }
+
+    section p,
+    section ul {
+      margin-block: 0.6rem;
+    }
+
+    section ul {
+      padding-left: 1.3rem;
+    }
+
+    section li + li {
+      margin-top: 0.38rem;
+    }
+
+    .key-point {
+      padding: 0.9rem 1rem;
+      background: var(--lagoon-pale);
+      border-radius: 0.75rem;
+    }
+
+    .meta {
+      margin-top: 2rem;
+      padding: 1rem 1.2rem;
+      color: var(--indigo-soft);
+      background: rgba(220, 238, 237, 0.6);
+      border-radius: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      width: min(calc(100% - 2rem), var(--content));
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+      color: var(--indigo-soft);
+      border-top: 1px solid rgba(32, 43, 74, 0.14);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.25rem 0;
+    }
+
+    @media (max-width: 56rem) {
+      .language-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 43rem) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: flex-start;
+      }
+
+      nav a {
+        padding-inline: 0.55rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-symbol {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .site-header,
+      .skip-link,
+      .hero-symbol {
+        display: none;
+      }
+
+      main {
+        width: 100%;
+        padding: 0;
+      }
+
+      .hero {
+        padding: 1.25rem;
+        color: var(--indigo);
+        background: #fff;
+        border: 2px solid var(--indigo);
+        box-shadow: none;
+      }
+
+      .hero p:last-child,
+      .eyebrow {
+        color: var(--indigo);
+      }
+
+      .language-grid {
+        display: block;
+      }
+
+      .language-panel {
+        margin-top: 1rem;
+        break-inside: avoid;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu / Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="support.html" aria-label="Taveliri, accueil du support">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Logo Taveliri">
+          <rect width="64" height="64" rx="18" fill="#202b4a"/>
+          <path d="M16 17h32v30H16z" fill="#fffaf3"/>
+          <path d="M16 27h32M16 37h32M27 17v30M38 17v30" stroke="#176f73" stroke-width="3"/>
+          <circle cx="27" cy="27" r="5.5" fill="#d86650"/>
+          <circle cx="38" cy="37" r="5.5" fill="#202b4a"/>
+        </svg>
+        <span>Taveliri</span>
+      </a>
+
+      <nav aria-label="Pages légales / Legal pages">
+        <ul>
+          <li><a href="privacy-policy.html">Confidentialité</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="terms.html" aria-current="page">Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Taveliri · Français + English</p>
+        <h1>Conditions d’utilisation</h1>
+        <p>Les règles simples qui encadrent l’utilisation du jeu. Simple terms governing use of the game.</p>
+      </div>
+      <svg class="hero-symbol" viewBox="0 0 160 160" aria-hidden="true">
+        <rect x="14" y="14" width="132" height="132" rx="36" fill="#fffaf3"/>
+        <path d="M40 54h80M40 80h80M40 106h80M54 40v80M80 40v80M106 40v80" stroke="#176f73" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+        <circle cx="80" cy="80" r="17" fill="#d86650"/>
+        <path d="M70 80l7 7 14-16" fill="none" stroke="#fffaf3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="language-grid">
+      <article class="language-panel" lang="fr" aria-labelledby="titre-fr">
+        <div class="language-heading">
+          <h2 id="titre-fr">Conditions en français</h2>
+          <span class="language-tag" aria-label="Français">FR</span>
+        </div>
+
+        <section aria-labelledby="fr-objet">
+          <h3 id="fr-objet">1. Objet et acceptation</h3>
+          <p>Les présentes conditions régissent le téléchargement et l’utilisation de l’application Taveliri, éditée par ProueStudio. En installant ou en utilisant Taveliri, vous acceptez ces conditions ainsi que les règles applicables de l’App Store d’Apple ou de Google Play.</p>
+          <p>Si vous n’acceptez pas ces conditions, n’utilisez pas l’application.</p>
+        </section>
+
+        <section aria-labelledby="fr-public">
+          <h3 id="fr-public">2. Public concerné</h3>
+          <p>Taveliri est un jeu de réflexion destiné à un public général. Il n’est pas spécifiquement conçu ni commercialisé pour les enfants. Si la loi applicable exige l’autorisation d’un parent ou représentant légal, celui-ci doit approuver l’utilisation de l’application.</p>
+        </section>
+
+        <section aria-labelledby="fr-licence">
+          <h3 id="fr-licence">3. Licence d’utilisation</h3>
+          <p>Sous réserve du respect de ces conditions, nous vous accordons une licence personnelle, limitée, non exclusive, non transférable et révocable pour installer et utiliser Taveliri à des fins privées et non commerciales sur vos appareils autorisés par la boutique concernée.</p>
+          <p>Cette licence ne constitue pas une vente de l’application ou de ses contenus. Vous ne pouvez pas sous-licencier, louer, revendre ou distribuer Taveliri.</p>
+        </section>
+
+        <section aria-labelledby="fr-jeu">
+          <h3 id="fr-jeu">4. Jeu gratuit et sauvegarde locale</h3>
+          <p>Taveliri propose notamment des grilles quotidiennes gratuites. Leur disponibilité peut être limitée dans le temps et le catalogue peut évoluer. La progression et les réglages sont enregistrés localement sur l’appareil, sans compte utilisateur ni synchronisation dans le cloud.</p>
+          <p class="key-point">La progression ne peut pas être transférée entre appareils ou entre Android et iOS. La suppression de l’application ou l’effacement des données de l’appareil peut supprimer définitivement la progression locale.</p>
+        </section>
+
+        <section aria-labelledby="fr-achat">
+          <h3 id="fr-achat">5. Achat unique non consommable</h3>
+          <p>Taveliri peut proposer un achat intégré unique et non consommable qui déverrouille durablement le mode libre pour le compte et la plateforme d’achat concernés. Il ne s’agit ni d’un abonnement ni d’un crédit consommable.</p>
+          <ul>
+            <li>Le prix, les taxes, le paiement, la facturation et les remboursements sont gérés par Apple ou Google selon leurs propres conditions.</li>
+            <li>RevenueCat aide l’application à vérifier le statut de l’achat. Il peut traiter un identifiant pseudonyme, l’historique d’achat associé et les reçus ou jetons nécessaires à cette vérification.</li>
+            <li>Une connexion Internet peut être nécessaire pour acheter ou restaurer l’accès.</li>
+            <li>La restauration doit être effectuée avec le même compte de boutique et sur la même plateforme. Un achat Apple ne se transfère pas vers Google Play, et inversement.</li>
+            <li>Un remboursement, une annulation ou une révocation par la boutique peut retirer le droit associé.</li>
+          </ul>
+          <p>Pour toute question de remboursement, utilisez en priorité les procédures de la boutique où l’achat a été effectué.</p>
+        </section>
+
+        <section aria-labelledby="fr-obligations">
+          <h3 id="fr-obligations">6. Utilisation autorisée</h3>
+          <p>Vous vous engagez à utiliser Taveliri conformément à la loi et à ne pas :</p>
+          <ul>
+            <li>contourner, désactiver ou altérer les mécanismes de paiement, de sécurité ou de vérification des droits ;</li>
+            <li>copier, extraire, republier ou exploiter commercialement le code, les grilles, les textes, les sons, les graphismes ou les autres contenus ;</li>
+            <li>décompiler, désassembler ou pratiquer l’ingénierie inverse, sauf dans la mesure expressément permise par une règle impérative ;</li>
+            <li>utiliser l’application d’une manière susceptible de la perturber, de l’endommager ou de porter atteinte aux droits d’autrui.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="fr-propriete">
+          <h3 id="fr-propriete">7. Propriété intellectuelle</h3>
+          <p>Taveliri, son nom, son identité visuelle, son interface, son code, ses textes, ses grilles, ses sons et ses autres éléments sont protégés par les droits de propriété intellectuelle et appartiennent à l’éditeur ou à ses concédants. La licence prévue ci-dessus est le seul droit qui vous est accordé.</p>
+          <p>Les marques, services et composants tiers restent la propriété de leurs titulaires respectifs et peuvent être soumis à leurs propres licences.</p>
+        </section>
+
+        <section aria-labelledby="fr-disponibilite">
+          <h3 id="fr-disponibilite">8. Disponibilité, mises à jour et compatibilité</h3>
+          <p>Le cœur du jeu est conçu pour fonctionner hors ligne après installation. Une connexion peut toutefois être nécessaire pour les achats, leur restauration, la vérification des droits ou certains contenus et services de boutique.</p>
+          <p>Nous pouvons corriger, mettre à jour, faire évoluer ou interrompre tout ou partie de Taveliri, notamment pour des raisons techniques, légales ou de sécurité. Nous ne garantissons pas une disponibilité permanente ou sans erreur. Certaines mises à jour peuvent être nécessaires pour continuer à utiliser l’application sur un appareil ou un système donné.</p>
+        </section>
+
+        <section aria-labelledby="fr-confidentialite">
+          <h3 id="fr-confidentialite">9. Confidentialité</h3>
+          <p>L’utilisation des données est décrite dans notre <a href="privacy-policy.html">politique de confidentialité</a>. En résumé, Taveliri ne requiert aucun compte, n’affiche aucune publicité et ne met en œuvre aucun suivi publicitaire. Les données de jeu restent locales ; les données d’achat strictement nécessaires sont traitées par RevenueCat, Apple ou Google.</p>
+        </section>
+
+        <section aria-labelledby="fr-responsabilite">
+          <h3 id="fr-responsabilite">10. Garanties et responsabilité</h3>
+          <p>Taveliri est un jeu fourni avec un soin raisonnable, à des fins de divertissement. Il ne fournit aucun conseil professionnel et les résultats ou classements n’ont aucune valeur officielle.</p>
+          <p>Dans la mesure permise par la loi, nous ne sommes pas responsables des dommages indirects, des interruptions provenant de la boutique ou du système, ni de la perte d’une progression enregistrée uniquement sur l’appareil, notamment après suppression de l’application, panne, remplacement de l’appareil ou modification de son horloge.</p>
+          <p>Aucune disposition des présentes ne limite les droits impératifs du consommateur ni une responsabilité qui ne peut légalement être exclue ou limitée.</p>
+        </section>
+
+        <section aria-labelledby="fr-fin">
+          <h3 id="fr-fin">11. Fin de la licence</h3>
+          <p>Vous pouvez cesser d’utiliser Taveliri à tout moment en la désinstallant. La licence peut prendre fin en cas de violation substantielle des présentes conditions. Les dispositions relatives à la propriété intellectuelle, à la responsabilité et au règlement des différends restent applicables lorsqu’elles doivent survivre à cette fin.</p>
+        </section>
+
+        <section aria-labelledby="fr-modifications">
+          <h3 id="fr-modifications">12. Modification des conditions</h3>
+          <p>Ces conditions peuvent être mises à jour pour refléter une évolution de l’application, du droit ou des services de boutique. La date de mise à jour est indiquée en bas de page. En cas de modification importante, une information appropriée sera fournie dans l’application ou sur cette page lorsque cela est raisonnablement possible.</p>
+        </section>
+
+        <section aria-labelledby="fr-droit">
+          <h3 id="fr-droit">13. Droit applicable et différends</h3>
+          <p>Les présentes conditions sont régies par le droit français, sans priver un consommateur des protections impératives dont il bénéficie dans son pays de résidence. En cas de difficulté, contactez-nous d’abord afin de rechercher une solution amiable. À défaut, les juridictions compétentes sont déterminées conformément aux règles impératives applicables.</p>
+        </section>
+
+        <section aria-labelledby="fr-contact">
+          <h3 id="fr-contact">14. Contact</h3>
+          <p><b>Éditeur :</b> ProueStudio<br>
+          <b>E-mail :</b> <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a><br>
+          <b>Support Discord :</b> <a href="https://discord.gg/gTGxpRgNwx">discord.gg/gTGxpRgNwx</a></p>
+        </section>
+      </article>
+
+      <article class="language-panel" lang="en" aria-labelledby="title-en">
+        <div class="language-heading">
+          <h2 id="title-en">Terms in English</h2>
+          <span class="language-tag" aria-label="English">EN</span>
+        </div>
+
+        <section aria-labelledby="en-purpose">
+          <h3 id="en-purpose">1. Purpose and acceptance</h3>
+          <p>These terms govern the download and use of the Taveliri application, published by ProueStudio. By installing or using Taveliri, you agree to these terms and to the applicable rules of Apple’s App Store or Google Play.</p>
+          <p>If you do not agree to these terms, do not use the application.</p>
+        </section>
+
+        <section aria-labelledby="en-audience">
+          <h3 id="en-audience">2. Intended audience</h3>
+          <p>Taveliri is a puzzle game for a general audience. It is not specifically designed or marketed for children. Where applicable law requires permission from a parent or legal guardian, that person must approve use of the application.</p>
+        </section>
+
+        <section aria-labelledby="en-licence">
+          <h3 id="en-licence">3. Licence to use</h3>
+          <p>Subject to compliance with these terms, we grant you a personal, limited, non-exclusive, non-transferable and revocable licence to install and use Taveliri for private, non-commercial purposes on devices authorised by the relevant store.</p>
+          <p>This licence is not a sale of the application or its content. You may not sublicense, rent, resell or distribute Taveliri.</p>
+        </section>
+
+        <section aria-labelledby="en-game">
+          <h3 id="en-game">4. Free game and local storage</h3>
+          <p>Taveliri includes free daily puzzles. Their availability may be time-limited and the catalogue may change. Progress and settings are stored locally on the device, with no user account or cloud synchronisation.</p>
+          <p class="key-point">Progress cannot be transferred between devices or between Android and iOS. Uninstalling the application or erasing device data may permanently delete local progress.</p>
+        </section>
+
+        <section aria-labelledby="en-purchase">
+          <h3 id="en-purchase">5. One-time non-consumable purchase</h3>
+          <p>Taveliri may offer a single non-consumable in-app purchase that permanently unlocks Free Play for the relevant purchasing account and platform. It is neither a subscription nor a consumable credit.</p>
+          <ul>
+            <li>The price, taxes, payment, billing and refunds are handled by Apple or Google under their own terms.</li>
+            <li>RevenueCat helps the application verify purchase status. It may process a pseudonymous identifier, associated purchase history, and the receipts or tokens needed for verification.</li>
+            <li>An Internet connection may be required to purchase or restore access.</li>
+            <li>Restoration must use the same store account and platform. An Apple purchase does not transfer to Google Play, or vice versa.</li>
+            <li>A refund, cancellation or revocation by the store may remove the associated entitlement.</li>
+          </ul>
+          <p>For refund questions, first use the procedure provided by the store where the purchase was made.</p>
+        </section>
+
+        <section aria-labelledby="en-use">
+          <h3 id="en-use">6. Permitted use</h3>
+          <p>You agree to use Taveliri lawfully and not to:</p>
+          <ul>
+            <li>bypass, disable or tamper with payment, security or entitlement-verification mechanisms;</li>
+            <li>copy, extract, republish or commercially exploit the code, puzzles, text, sounds, graphics or other content;</li>
+            <li>decompile, disassemble or reverse-engineer the application, except to the extent expressly allowed by mandatory law;</li>
+            <li>use the application in a way that may disrupt or damage it, or infringe another person’s rights.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="en-ip">
+          <h3 id="en-ip">7. Intellectual property</h3>
+          <p>Taveliri, its name, visual identity, interface, code, text, puzzles, sounds and other elements are protected by intellectual-property rights and belong to the publisher or its licensors. The licence above is the only right granted to you.</p>
+          <p>Third-party trademarks, services and components remain the property of their respective owners and may be subject to their own licences.</p>
+        </section>
+
+        <section aria-labelledby="en-availability">
+          <h3 id="en-availability">8. Availability, updates and compatibility</h3>
+          <p>The core game is designed to work offline after installation. A connection may still be required for purchases, restoration, entitlement verification, or certain store content and services.</p>
+          <p>We may fix, update, change or discontinue all or part of Taveliri, including for technical, legal or security reasons. We do not promise permanent or error-free availability. Some updates may be required to continue using the application on a particular device or operating system.</p>
+        </section>
+
+        <section aria-labelledby="en-privacy">
+          <h3 id="en-privacy">9. Privacy</h3>
+          <p>Data use is described in our <a href="privacy-policy.html">Privacy Policy</a>. In summary, Taveliri requires no account, displays no advertising and uses no advertising tracking. Game data remains local; strictly necessary purchase data is processed by RevenueCat, Apple or Google.</p>
+        </section>
+
+        <section aria-labelledby="en-liability">
+          <h3 id="en-liability">10. Warranties and liability</h3>
+          <p>Taveliri is a game provided with reasonable care for entertainment purposes. It does not provide professional advice, and its results or rankings have no official value.</p>
+          <p>To the extent permitted by law, we are not liable for indirect damage, interruptions caused by a store or operating system, or the loss of progress stored solely on the device, including after uninstalling the application, device failure or replacement, or changes to the device clock.</p>
+          <p>Nothing in these terms limits mandatory consumer rights or any liability that cannot lawfully be excluded or limited.</p>
+        </section>
+
+        <section aria-labelledby="en-termination">
+          <h3 id="en-termination">11. End of the licence</h3>
+          <p>You may stop using Taveliri at any time by uninstalling it. The licence may end if you materially breach these terms. Provisions concerning intellectual property, liability and dispute resolution remain effective where they are intended to survive termination.</p>
+        </section>
+
+        <section aria-labelledby="en-changes">
+          <h3 id="en-changes">12. Changes to these terms</h3>
+          <p>These terms may be updated to reflect changes to the application, the law or store services. The update date appears below. Where reasonably possible, significant changes will be communicated in the application or on this page.</p>
+        </section>
+
+        <section aria-labelledby="en-law">
+          <h3 id="en-law">13. Governing law and disputes</h3>
+          <p>These terms are governed by French law, without depriving consumers of mandatory protections available in their country of residence. If a problem arises, please contact us first so that we can seek an amicable solution. If this is unsuccessful, the competent courts will be determined under applicable mandatory rules.</p>
+        </section>
+
+        <section aria-labelledby="en-contact">
+          <h3 id="en-contact">14. Contact</h3>
+          <p><b>Publisher:</b> ProueStudio<br>
+          <b>Email:</b> <a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a><br>
+          <b>Discord support:</b> <a href="https://discord.gg/gTGxpRgNwx">discord.gg/gTGxpRgNwx</a></p>
+        </section>
+      </article>
+    </div>
+
+    <p class="meta">Dernière mise à jour : 23 août 2026 · Last updated: 23 August 2026</p>
+  </main>
+
+  <footer>
+    <p><b>Taveliri</b> · Éditeur / Publisher: ProueStudio</p>
+    <p><a href="mailto:prouestudio@gmail.com">prouestudio@gmail.com</a> · <a href="https://discord.gg/gTGxpRgNwx">Discord</a></p>
+  </footer>
+</body>
+</html>
