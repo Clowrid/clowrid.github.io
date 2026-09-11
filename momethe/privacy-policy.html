@@ -1,105 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité - MoMethe : Mots Mêlés Thématiques</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Politique de confidentialité de MoMethe — Kebijakan Privasi MoMethe. Français et Bahasa Indonesia.">
+  <title>MoMethe — Confidentialité · Kebijakan Privasi</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; background-color: #f9f9f9; }
-    h1 { color: #2D5A3A; font-size: 1.8em; }
-    h2 { color: #4A7C59; font-size: 1.3em; margin-top: 2em; }
-    h3 { color: #7BAF8B; font-size: 1.1em; margin-top: 1.2em; }
-    p, li { font-size: 0.95em; }
-    ul { padding-left: 1.5em; }
-    a { color: #4A7C59; }
-    .updated { color: #666; font-style: italic; }
+    :root { color-scheme: light; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:#263c30; background:#f7f8f4; }
+    body { max-width:800px; margin:auto; padding:24px; line-height:1.65; }
+    header { border-bottom:1px solid #ccd5c9; padding-bottom:20px; }
+    nav { display:flex; gap:12px; flex-wrap:wrap; }
+    nav a { border:1px solid #4a7254; border-radius:8px; padding:8px 14px; text-decoration:none; }
+    a { color:#285e38; text-underline-offset:3px; overflow-wrap:anywhere; }
+    a:focus-visible { outline:3px solid #397cbd; outline-offset:3px; }
+    h1 { font-size:1.8rem; line-height:1.25; }
+    h2 { font-size:1.25rem; line-height:1.4; margin-top:1.8em; }
+    h3 { font-size:1.05rem; margin-bottom:0; }
+    .updated { color:#5b675d; }
+    section { scroll-margin-top:20px; padding-bottom:28px; }
+    section + section { border-top:1px solid #ccd5c9; padding-top:20px; }
+    li { margin-bottom:8px; }
+    @media(max-width:480px) { body { padding:18px; } h1 { font-size:1.55rem; } }
   </style>
 </head>
 <body>
+<header>
+  <p><strong>MoMethe · ProueStudio</strong></p>
+  <nav aria-label="Langue / Bahasa"><a href="#fr" lang="fr">Français</a><a href="#id" lang="id">Bahasa Indonesia</a></nav>
+</header>
+<main>
+<section id="fr" lang="fr" aria-labelledby="title-fr">
+<h1 id="title-fr">Politique de confidentialité</h1>
+<p class="updated">Dernière mise à jour : 11 septembre 2026</p>
+<p>ProueStudio développe et publie <strong>MoMethe — Mots Mêlés Thématiques</strong> sur Google Play et l’App Store. Cette page explique les données utilisées par le Jeu et ses prestataires, ainsi que vos choix.</p>
 
-<h1>Politique de confidentialité</h1>
-<p><strong>MoMethe — Mots Mêlés Thématiques</strong></p>
-<p class="updated">Dernière mise à jour : 10 août 2026</p>
-
-<p>ProueStudio (ci-après "nous") développe et publie l'application mobile <strong>MoMethe — Mots Mêlés Thématiques</strong> (ci-après "le Jeu"), disponible sur Google Play et l'App Store. Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons les informations lorsque vous utilisez notre Jeu.</p>
-
-<h2>1. Données collectées</h2>
-<p>Nous ne collectons <strong>aucune donnée personnelle directement</strong> (pas de nom réel, email, adresse, ni identifiant personnel).</p>
-<p>Le Jeu utilise une <strong>authentification anonyme</strong> via Firebase Auth : un identifiant technique unique est créé automatiquement, sans que vous n'ayez à fournir d'informations personnelles. Cet identifiant permet de sauvegarder votre progression dans les classements.</p>
-<p>Si vous choisissez un pseudo pour les classements, celui-ci est stocké sur nos serveurs mais ne constitue pas une donnée personnelle identifiable.</p>
-<p>Les services tiers intégrés au Jeu peuvent collecter automatiquement certaines données techniques :</p>
+<h2>1. Données et usages</h2>
+<p>Vous pouvez jouer sans fournir de nom réel ni d’adresse e-mail. Cela ne signifie pas que le Jeu ne traite aucune donnée personnelle : les identifiants techniques et les données qui leur sont associées peuvent permettre de distinguer un joueur ou un appareil.</p>
 <ul>
-  <li>Identifiant publicitaire de l'appareil (GAID sur Android / IDFA sur iOS)</li>
-  <li>Modèle de l'appareil, version du système d'exploitation</li>
-  <li>Adresse IP (utilisée pour la localisation approximative par les services publicitaires)</li>
-  <li>Jeton de notification push (FCM token) : identifiant technique unique de l'appareil utilisé pour envoyer les notifications de duel (invitation reçue, tour à jouer). Ce jeton est lié uniquement à votre identifiant Firebase anonyme, jamais à votre identité.</li>
-  <li>Données de diagnostic : rapports de plantage anonymisés pour améliorer la stabilité du Jeu</li>
+<li><strong>Progression et réglages :</strong> niveaux, scores, collection, préférences et choix de confidentialité sont enregistrés localement sur l’appareil. Si vous utilisez le transfert vers un autre téléphone, une sauvegarde de ces données est envoyée à Firestore et associée à votre identifiant Firebase pour permettre leur restauration.</li>
+<li><strong>Services en ligne :</strong> Firebase crée un identifiant de compte technique. Les profils, pseudonymes, avatars, pays, classements, scores, invitations, participants et résultats des parties en ligne peuvent être associés à cet identifiant. Les éléments de profil et résultats destinés aux classements ou aux parties partagées sont visibles par les joueurs concernés.</li>
+<li><strong>Google Play Games :</strong> sur Android, si vous utilisez ce service, Google traite votre profil de joueur, vos succès et votre activité de jeu. Le Jeu peut utiliser l’identifiant et le nom du profil pour les fonctionnalités de jeu. Les paramètres de votre compte Google contrôlent la visibilité et la connexion à Play Games.</li>
+<li><strong>Notifications :</strong> un jeton d’appareil, l’identifiant Firebase, la plateforme, la langue et une date de mise à jour sont utilisés pour les notifications. Celles-ci peuvent concerner les duels, les nouveautés du Jeu et des invitations à revenir jouer.</li>
+<li><strong>Statistiques et diagnostics :</strong> selon votre choix « Analyse et crashs », Firebase Analytics et Crashlytics traitent des événements d’utilisation et des rapports techniques, notamment la version du Jeu, les caractéristiques de l’appareil, les identifiants d’instance et les informations de plantage. Ces données ne sont pas présentées comme entièrement anonymes.</li>
+<li><strong>Publicité et attribution :</strong> les prestataires peuvent traiter l’adresse IP, la localisation approximative qui en est déduite, les caractéristiques de l’appareil, des identifiants techniques, les interactions avec les publicités et, selon les autorisations et le consentement, l’identifiant publicitaire de l’appareil.</li>
+<li><strong>Achats :</strong> Apple ou Google traite le paiement. RevenueCat vérifie les transactions et les droits aux fonctionnalités achetées à l’aide d’identifiants d’utilisateur et d’achat. Son identifiant peut être lié à l’identifiant Firebase. Le Jeu ne reçoit pas les coordonnées complètes de votre carte bancaire.</li>
 </ul>
 
-<h2>2. Services tiers</h2>
-<p>Le Jeu utilise les services tiers suivants, chacun ayant sa propre politique de confidentialité :</p>
+<h2>2. Prestataires intégrés</h2>
+<h3>Firebase / Google</h3>
+<p>Firebase Auth, Cloud Firestore et les fonctions serveur fournissent les comptes techniques et les fonctionnalités en ligne. Firebase Cloud Messaging fournit les notifications ; Firebase Analytics et Crashlytics servent à améliorer l’utilisation et la stabilité du Jeu. Consultez la <a href="https://firebase.google.com/support/privacy">confidentialité Firebase</a> et la <a href="https://policies.google.com/privacy">politique Google</a>, également applicable à Google Play Games.</p>
+<h3>Unity LevelPlay, Unity Ads, Google AdMob et Liftoff Monetize</h3>
+<p>Ces services diffusent les vidéos récompensées facultatives et mesurent leur diffusion, leur performance et la fraude. Ils peuvent utiliser ou partager les données publicitaires avec leurs partenaires de demande pour la sélection, la diffusion, la personnalisation et la mesure des annonces. LevelPlay reçoit aussi un identifiant de joueur pour la validation des récompenses. Liftoff est intégré sur Android et iOS. Un achat intégré permet de bénéficier des avantages correspondants sans regarder de publicité.</p>
+<p>Politiques : <a href="https://unity.com/legal/privacy-policy">Unity / LevelPlay</a>, <a href="https://policies.google.com/technologies/partner-sites">Google AdMob</a>, <a href="https://liftoff.io/privacy-policy/">Liftoff Monetize</a>.</p>
+<h3>AppsFlyer</h3>
+<p>AppsFlyer mesure l’origine des installations et les performances des campagnes d’acquisition. Il reçoit des données techniques et des événements tels que le visionnage d’une publicité récompensée et son emplacement dans le Jeu. Le SDK démarre après l’étape de consentement. Refuser les identifiants publicitaires limite leur utilisation ; cela n’arrête pas toute mesure d’attribution et n’anonymise pas l’ensemble des données techniques, comme l’identifiant AppsFlyer ou l’adresse IP. Consultez la <a href="https://www.appsflyer.com/legal/services-privacy-policy/">politique de confidentialité des services AppsFlyer</a>.</p>
+<h3>RevenueCat</h3>
+<p>RevenueCat gère la validation et la restauration des achats, ainsi que les droits d’accès, avec les services de paiement des stores. Consultez la <a href="https://www.revenuecat.com/privacy">politique RevenueCat</a>.</p>
 
-<h3>Publicités — médiation Unity LevelPlay (Unity Ads, Google AdMob &amp; Liftoff Monetize)</h3>
-<p>Les publicités du Jeu se limitent à des <strong>vidéos récompensées facultatives</strong> (regardées volontairement en échange d'un bonus). Elles sont diffusées via la plateforme de médiation <strong>Unity LevelPlay</strong>, qui met en concurrence plusieurs régies publicitaires — <strong>Unity Ads</strong>, <strong>Google AdMob</strong> et, sur Android, <strong>Liftoff Monetize</strong> (anciennement Vungle) — pour afficher l'annonce la plus pertinente. Vous pouvez supprimer définitivement les publicités via un achat intégré.</p>
-<p>Ces régies et leurs partenaires de demande peuvent utiliser des technologies de suivi, notamment leurs SDK mobiles, afin de collecter des données publicitaires : identifiant publicitaire, adresse IP, caractéristiques de l'appareil et du système, localisation approximative, ainsi que les interactions avec les annonces et les données de performance. Ces informations peuvent être utilisées ou partagées pour sélectionner, diffuser, personnaliser et mesurer les annonces, prévenir la fraude et améliorer leurs services.</p>
-<p>Politiques de confidentialité des régies :</p>
+<h2>3. Vos choix</h2>
 <ul>
-  <li>Unity Ads / LevelPlay : <a href="https://unity.com/legal/privacy-policy" target="_blank">https://unity.com/legal/privacy-policy</a></li>
-  <li>Google AdMob : <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a> (voir aussi <a href="https://policies.google.com/technologies/partner-sites" target="_blank">comment Google utilise les données</a>)</li>
-  <li>Liftoff Monetize / Vungle (Android) : <a href="https://liftoff.io/privacy-policy/" target="_blank">https://liftoff.io/privacy-policy/</a> — <a href="https://vungle.com/opt-out/" target="_blank">désactivation de la publicité ciblée</a></li>
-</ul>
-<p><strong>Consentement publicitaire (EEE, Royaume-Uni, Suisse)</strong> : si vous résidez dans ces régions, un formulaire de consentement certifié par Google (User Messaging Platform) vous est présenté afin de recueillir votre choix concernant les publicités personnalisées. En l'absence de consentement, seules des publicités non personnalisées peuvent être diffusées. Vous pouvez retirer ou modifier ce consentement à tout moment (voir §7 et les réglages publicitaires de votre appareil).</p>
-
-<h3>Firebase Auth (authentification)</h3>
-<p>Firebase Auth fournit une authentification anonyme permettant d'identifier votre appareil pour les classements. Aucune information personnelle n'est requise.</p>
-<p>Politique de confidentialité : <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></p>
-
-<h3>Cloud Firestore (base de données)</h3>
-<p>Cloud Firestore stocke les données liées aux classements et aux duels multijoueurs : pseudo choisi, scores, codes d'invitation de duel (6 caractères), liste des participants à un duel et résultats de chaque partie. Ces données sont associées à votre identifiant Firebase anonyme.</p>
-
-<h3>Firebase Cloud Messaging (notifications push)</h3>
-<p>Firebase Cloud Messaging (FCM) envoie les notifications push transactionnelles liées aux duels multijoueurs : invitation reçue d'un ami, tour à jouer dans un duel en cours. Aucune notification marketing n'est envoyée. Le jeton FCM est stocké sur nos serveurs uniquement pour cibler votre appareil et peut être supprimé à tout moment en désactivant les notifications dans les réglages système ou dans l'écran Réglages du Jeu.</p>
-<p>Politique de confidentialité : <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></p>
-
-<h3>Firebase Crashlytics (rapports de plantage)</h3>
-<p>Firebase Crashlytics collecte automatiquement des rapports de plantage anonymisés (pile d'appels, version de l'appli, modèle d'appareil) afin d'identifier et corriger les bugs. Aucune donnée personnelle n'est transmise.</p>
-
-<h3>Firebase Analytics (statistiques d'usage)</h3>
-<p>Firebase Analytics collecte des statistiques agrégées et anonymes sur l'utilisation du Jeu (écrans consultés, niveaux joués, fonctionnalités utilisées) pour améliorer l'expérience utilisateur.</p>
-
-<h3>RevenueCat (achats intégrés)</h3>
-<p>RevenueCat gère les achats intégrés dans le Jeu (suppression des publicités). Les transactions sont traitées par Apple (App Store) ou Google (Google Play) selon votre appareil. RevenueCat ne collecte aucune donnée financière directement — seul un identifiant anonyme est utilisé pour vérifier le statut de votre achat.</p>
-<p>Politique de confidentialité : <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></p>
-
-<h2>3. Stockage local</h2>
-<p>Le Jeu sauvegarde votre progression (scores, niveaux débloqués, paramètres) localement sur votre appareil via le stockage de l'application.</p>
-
-<h2>4. Public visé</h2>
-<p>Le Jeu est destiné à un public de <strong>13 ans et plus</strong>. Nous ne collectons pas sciemment de données auprès d'enfants de moins de 13 ans.</p>
-
-<h2>5. Partage des données</h2>
-<p>Nous ne vendons, n'échangeons ni ne transférons vos données personnelles à des tiers, en dehors des services tiers mentionnés ci-dessus qui sont nécessaires au fonctionnement du Jeu.</p>
-
-<h2>6. Sécurité</h2>
-<p>Nous prenons des mesures raisonnables pour protéger les informations traitées par le Jeu. Cependant, aucune méthode de transmission ou de stockage électronique n'est totalement sécurisée.</p>
-
-<h2>7. Vos droits (RGPD)</h2>
-<p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
-<ul>
-  <li><strong>Droit d'accès</strong> : demander quelles données sont collectées</li>
-  <li><strong>Droit de suppression</strong> : demander la suppression de vos données</li>
-  <li><strong>Droit d'opposition</strong> : refuser le traitement de vos données à des fins publicitaires</li>
-  <li><strong>Désactivation du suivi iOS</strong> : Réglages &gt; Confidentialité et sécurité &gt; Suivi</li>
-  <li><strong>Désactivation du suivi Android</strong> : Paramètres &gt; Google &gt; Annonces</li>
-  <li><strong>Désactivation des notifications push</strong> : dans l'écran Réglages du Jeu, ou dans les réglages système de votre appareil (iOS : Réglages &gt; Notifications &gt; MoMethe ; Android : Paramètres &gt; Applications &gt; MoMethe &gt; Notifications)</li>
+<li><strong>Analyse et rapports de plantage :</strong> utilisez le choix « Analyse et crashs » dans les paramètres de confidentialité du Jeu. À partir de la version 1.21.6, ces deux collectes restent désactivées en l’absence d’accord et le choix enregistré est réappliqué à chaque lancement.</li>
+<li><strong>Publicité :</strong> les paramètres de confidentialité du Jeu permettent de revoir votre choix. Dans l’EEE, au Royaume-Uni et en Suisse, le formulaire Google UMP recueille les choix applicables et les communique aux prestataires. Un refus ne supprime pas nécessairement les annonces ni les traitements techniques nécessaires à leur diffusion. Les autorisations de suivi iOS et les paramètres publicitaires Android offrent des contrôles supplémentaires.</li>
+<li><strong>Notifications :</strong> les réglages du Jeu permettent de choisir certaines catégories de notifications de duel. Pour bloquer toutes les notifications affichées, utilisez les réglages système de MoMethe. Désactiver l’affichage ne supprime pas automatiquement le jeton enregistré sur nos serveurs.</li>
+<li><strong>Google Play Games :</strong> vous pouvez gérer la connexion, la visibilité du profil et la suppression des données Play Games dans les paramètres Google. Voir <a href="https://support.google.com/googleplay/answer/9130646?hl=fr">supprimer des données Play Games</a>. Cette action ne supprime pas à elle seule toutes les données détenues par ProueStudio.</li>
 </ul>
 
-<h2>8. Modifications</h2>
-<p>Nous nous réservons le droit de mettre à jour cette politique de confidentialité. Toute modification sera publiée sur cette page avec une date de mise à jour révisée.</p>
+<h2>4. Conservation et suppression</h2>
+<p>Les données locales restent sur votre appareil jusqu’à leur effacement ou leur remplacement. La réinitialisation proposée dans le Jeu efface les catégories de données locales prévues à cet effet ; les preuves d’achat restaurables peuvent être conservées. Elle ne garantit pas la suppression de toutes les données distantes ni de celles détenues par les prestataires.</p>
+<p>Les profils, résultats de parties et sauvegardes de transfert sur nos serveurs ne font actuellement pas l’objet d’une purge automatique après une durée fixe. L’expiration d’un duel ou d’un code de transfert ne supprime pas ces données. Vous pouvez en demander la suppression à l’adresse ci-dessous. Les données d’achat, de sécurité et celles soumises à une obligation de conservation peuvent suivre des durées différentes. Les prestataires appliquent également leurs propres règles de conservation.</p>
+<p>Pour une demande d’accès, de rectification ou de suppression, nous pourrons vous demander les informations nécessaires pour retrouver vos données, sans demander votre mot de passe.</p>
 
-<h2>9. Contact</h2>
-<p>Pour toute question concernant cette politique de confidentialité, vous pouvez nous contacter à :</p>
-<p><strong>Email</strong> : <a href="mailto:bruno.faugeroux@proton.me">bruno.faugeroux@proton.me</a></p>
+<h2>5. Partage, hébergement et sécurité</h2>
+<p>Les données sont communiquées aux prestataires décrits ici pour les finalités indiquées, et aux autres joueurs lorsque vous utilisez une fonctionnalité de partage ou de classement. Nous ne commercialisons pas un fichier de joueurs. Les traitements publicitaires peuvent toutefois impliquer des échanges de données entre les partenaires décrits plus haut. Certains prestataires peuvent traiter les données dans d’autres pays ; leurs politiques décrivent leurs lieux de traitement et garanties.</p>
+<p>Nous utilisons des mesures de sécurité et des contrôles d’accès adaptés au service. Aucune transmission ni aucun stockage ne peut être garanti totalement sûr.</p>
 
+<h2>6. Public visé</h2>
+<p>Le Jeu s’adresse aux personnes de 13 ans et plus. Nous ne cherchons pas à recueillir sciemment des données auprès d’enfants de moins de 13 ans. Contactez-nous si vous pensez que cela s’est produit.</p>
+
+<h2>7. Droits, contact et modifications</h2>
+<p>Selon la législation applicable, vous pouvez demander l’accès, la rectification, l’effacement ou la limitation du traitement de vos données, vous opposer à certains traitements et retirer votre consentement. Vous pouvez également contacter l’autorité de protection des données compétente. Pour toute question ou demande : <a href="mailto:bruno.faugeroux@proton.me">bruno.faugeroux@proton.me</a> (ProueStudio).</p>
+<p>Cette politique peut évoluer. La version à jour est publiée sur cette page avec sa date de modification.</p>
+</section>
+
+<section id="id" lang="id" aria-labelledby="title-id">
+<h1 id="title-id">Kebijakan Privasi</h1>
+<p class="updated">Terakhir diperbarui: 11 September 2026</p>
+<p>ProueStudio mengembangkan dan menerbitkan <strong>MoMethe</strong> di Google Play dan App Store. Halaman ini menjelaskan data yang digunakan oleh gim dan penyedia layanannya, serta pilihan yang tersedia bagi Anda.</p>
+
+<h2>1. Data dan penggunaannya</h2>
+<p>Anda dapat bermain tanpa memberikan nama asli atau alamat email. Namun, ini bukan berarti gim tidak memproses data pribadi: pengenal teknis dan data yang terkait dengannya dapat membedakan seorang pemain atau sebuah perangkat.</p>
+<ul>
+<li><strong>Kemajuan dan pengaturan:</strong> level, skor, koleksi, preferensi, dan pilihan privasi disimpan secara lokal di perangkat. Jika Anda menggunakan fitur transfer ke ponsel lain, cadangan data ini dikirim ke Firestore dan dikaitkan dengan pengenal Firebase Anda agar dapat dipulihkan.</li>
+<li><strong>Layanan daring:</strong> Firebase membuat pengenal akun teknis. Profil, nama panggilan, avatar, negara, papan peringkat, skor, undangan, peserta, dan hasil permainan daring dapat dikaitkan dengan pengenal ini. Informasi profil dan hasil yang ditujukan untuk papan peringkat atau permainan bersama dapat dilihat oleh pemain yang terkait.</li>
+<li><strong>Google Play Games:</strong> di Android, jika Anda menggunakan layanan ini, Google memproses profil pemain, pencapaian, dan aktivitas bermain Anda. Gim dapat menggunakan pengenal dan nama profil untuk fitur permainan. Pengaturan akun Google Anda mengontrol visibilitas dan koneksi ke Play Games.</li>
+<li><strong>Notifikasi:</strong> token perangkat, pengenal Firebase, platform, bahasa, dan waktu pembaruan digunakan untuk mengirim notifikasi. Notifikasi dapat berkaitan dengan duel, kabar terbaru tentang gim, dan ajakan untuk kembali bermain.</li>
+<li><strong>Statistik dan diagnostik:</strong> sesuai pilihan Anda untuk « Analitik dan laporan kerusakan », Firebase Analytics dan Crashlytics memproses peristiwa penggunaan dan laporan teknis, termasuk versi gim, karakteristik perangkat, pengenal instans, dan informasi kerusakan. Data ini tidak dianggap sepenuhnya anonim.</li>
+<li><strong>Iklan dan atribusi:</strong> penyedia layanan dapat memproses alamat IP, perkiraan lokasi berdasarkan alamat tersebut, karakteristik perangkat, pengenal teknis, interaksi dengan iklan, serta pengenal iklan perangkat jika izin dan persetujuan mengizinkannya.</li>
+<li><strong>Pembelian:</strong> Apple atau Google memproses pembayaran. RevenueCat memverifikasi transaksi dan hak akses ke fitur yang dibeli menggunakan pengenal pengguna dan pembelian. Pengenal RevenueCat dapat ditautkan ke pengenal Firebase. Gim tidak menerima rincian lengkap kartu bank Anda.</li>
+</ul>
+
+<h2>2. Penyedia layanan</h2>
+<h3>Firebase / Google</h3>
+<p>Firebase Auth, Cloud Firestore, dan fungsi server menyediakan akun teknis dan fitur daring. Firebase Cloud Messaging menyediakan notifikasi; Firebase Analytics dan Crashlytics membantu meningkatkan pengalaman penggunaan dan stabilitas gim. Lihat <a href="https://firebase.google.com/support/privacy">informasi privasi Firebase</a> dan <a href="https://policies.google.com/privacy?hl=id">kebijakan Google</a>, yang juga berlaku untuk Google Play Games.</p>
+<h3>Unity LevelPlay, Unity Ads, Google AdMob, dan Liftoff Monetize</h3>
+<p>Layanan ini menayangkan video iklan berhadiah yang bersifat opsional serta mengukur penayangan dan kinerjanya serta mendeteksi penipuan iklan. Mereka dapat menggunakan atau membagikan data iklan kepada mitra penyedia iklan untuk memilih, menayangkan, mempersonalisasi, dan mengukur iklan. LevelPlay juga menerima pengenal pemain untuk memvalidasi hadiah. Liftoff terintegrasi di Android dan iOS. Pembelian dalam aplikasi memungkinkan Anda memperoleh manfaat terkait tanpa menonton iklan.</p>
+<p>Kebijakan: <a href="https://unity.com/legal/privacy-policy">Unity / LevelPlay</a>, <a href="https://policies.google.com/technologies/partner-sites?hl=id">Google AdMob</a>, <a href="https://liftoff.io/privacy-policy/">Liftoff Monetize</a>.</p>
+<h3>AppsFlyer</h3>
+<p>AppsFlyer mengukur sumber pemasangan dan kinerja kampanye akuisisi pengguna. Layanan ini menerima data teknis dan peristiwa seperti penayangan iklan berhadiah beserta penempatannya di dalam gim. SDK dijalankan setelah tahap persetujuan. Menolak pengenal iklan membatasi penggunaannya; tindakan ini tidak menghentikan seluruh pengukuran atribusi dan tidak membuat semua data teknis, seperti pengenal AppsFlyer atau alamat IP, menjadi anonim. Lihat <a href="https://www.appsflyer.com/legal/services-privacy-policy/">kebijakan privasi layanan AppsFlyer</a>.</p>
+<h3>RevenueCat</h3>
+<p>RevenueCat mengelola verifikasi dan pemulihan pembelian serta hak akses, bersama layanan pembayaran dari toko aplikasi. Lihat <a href="https://www.revenuecat.com/privacy">kebijakan RevenueCat</a>.</p>
+
+<h2>3. Pilihan Anda</h2>
+<ul>
+<li><strong>Analitik dan laporan kerusakan:</strong> gunakan pilihan « Analitik dan laporan kerusakan » di pengaturan privasi gim. Mulai versi 1.21.6, pengumpulan kedua jenis data ini tetap dinonaktifkan jika Anda belum menyetujuinya, dan pilihan yang disimpan diterapkan kembali setiap kali gim dijalankan.</li>
+<li><strong>Iklan:</strong> Anda dapat meninjau kembali pilihan melalui pengaturan privasi gim. Di Wilayah Ekonomi Eropa, Inggris Raya, dan Swiss, formulir Google UMP mengumpulkan pilihan yang berlaku dan menyampaikannya kepada penyedia layanan. Penolakan tidak selalu menghilangkan iklan atau pemrosesan teknis yang diperlukan untuk menayangkannya. Izin pelacakan iOS dan pengaturan iklan Android menyediakan kontrol tambahan.</li>
+<li><strong>Notifikasi:</strong> pengaturan gim memungkinkan Anda memilih beberapa kategori notifikasi duel. Untuk memblokir semua notifikasi yang ditampilkan, gunakan pengaturan sistem untuk MoMethe. Menonaktifkan tampilan notifikasi tidak otomatis menghapus token yang disimpan di server kami.</li>
+<li><strong>Google Play Games:</strong> Anda dapat mengelola koneksi, visibilitas profil, dan penghapusan data Play Games melalui pengaturan Google. Lihat <a href="https://support.google.com/googleplay/answer/9130646?hl=id">menghapus data Play Games</a>. Tindakan ini sendiri tidak menghapus semua data yang disimpan oleh ProueStudio.</li>
+</ul>
+
+<h2>4. Penyimpanan dan penghapusan</h2>
+<p>Data lokal tetap berada di perangkat sampai dihapus atau diganti. Opsi pengaturan ulang di dalam gim menghapus kategori data lokal yang ditentukan untuk tujuan tersebut; bukti pembelian yang dapat dipulihkan mungkin tetap disimpan. Opsi ini tidak menjamin penghapusan semua data daring atau data yang disimpan oleh penyedia layanan.</p>
+<p>Profil, hasil permainan, dan cadangan transfer di server kami saat ini tidak dihapus secara otomatis setelah jangka waktu tertentu. Berakhirnya duel atau masa berlaku kode transfer tidak menghapus data tersebut. Anda dapat meminta penghapusannya melalui alamat kontak di bawah ini. Data pembelian, keamanan, atau data yang wajib disimpan dapat memiliki masa penyimpanan yang berbeda. Penyedia layanan juga menerapkan aturan penyimpanannya sendiri.</p>
+<p>Untuk permintaan akses, perbaikan, atau penghapusan, kami mungkin meminta informasi yang diperlukan untuk menemukan data Anda, tanpa meminta kata sandi.</p>
+
+<h2>5. Pembagian data, pemrosesan, dan keamanan</h2>
+<p>Data dibagikan kepada penyedia layanan yang disebutkan di sini untuk tujuan yang dijelaskan, serta kepada pemain lain saat Anda menggunakan fitur berbagi atau papan peringkat. Kami tidak menjual daftar pemain. Namun, pemrosesan iklan dapat melibatkan pertukaran data di antara mitra yang dijelaskan di atas. Sebagian penyedia layanan dapat memproses data di negara lain; kebijakan mereka menjelaskan lokasi pemrosesan dan perlindungan yang diterapkan.</p>
+<p>Kami menggunakan langkah keamanan dan kontrol akses yang sesuai dengan layanan. Tidak ada metode pengiriman atau penyimpanan data yang dapat dijamin sepenuhnya aman.</p>
+
+<h2>6. Pengguna yang dituju</h2>
+<p>Gim ditujukan untuk pengguna berusia 13 tahun ke atas. Kami tidak bermaksud mengumpulkan data dari anak di bawah 13 tahun secara sengaja. Hubungi kami jika Anda merasa hal tersebut telah terjadi.</p>
+
+<h2>7. Hak, kontak, dan perubahan</h2>
+<p>Sesuai hukum yang berlaku, Anda dapat meminta akses, perbaikan, penghapusan, atau pembatasan pemrosesan data, menolak pemrosesan tertentu, dan menarik persetujuan. Anda juga dapat menghubungi otoritas perlindungan data yang berwenang. Untuk pertanyaan atau permintaan, hubungi <a href="mailto:bruno.faugeroux@proton.me">bruno.faugeroux@proton.me</a> (ProueStudio).</p>
+<p>Kebijakan ini dapat berubah. Versi terbaru akan diterbitkan di halaman ini beserta tanggal pembaruannya.</p>
+</section>
+</main>
+<script>
+  // Les deux traductions restent accessibles sans JavaScript ni cookie.
+  if (!location.hash && /^id(?:-|$)/i.test(navigator.language || '')) {
+    document.getElementById('id').scrollIntoView();
+  }
+</script>
 </body>
 </html>
