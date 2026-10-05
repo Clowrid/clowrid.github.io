@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Politique de confidentialité de MoMethe — Kebijakan Privasi MoMethe. Français et Bahasa Indonesia.">
-  <title>MoMethe — Confidentialité · Kebijakan Privasi</title>
+  <meta name="description" content="Politique de confidentialité de MoMethe — MoMethe Privacy Policy — Kebijakan Privasi MoMethe. Français, English et Bahasa Indonesia.">
+  <title>MoMethe — Confidentialité · Privacy Policy · Kebijakan Privasi</title>
   <style>
     :root { color-scheme: light; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:#263c30; background:#f7f8f4; }
     body { max-width:800px; margin:auto; padding:24px; line-height:1.65; }
@@ -26,7 +26,7 @@
 <body>
 <header>
   <p><strong>MoMethe · ProueStudio</strong></p>
-  <nav aria-label="Langue / Bahasa"><a href="#fr" lang="fr">Français</a><a href="#id" lang="id">Bahasa Indonesia</a></nav>
+  <nav aria-label="Langue / Language / Bahasa"><a href="#fr" lang="fr">Français</a><a href="#en" lang="en">English</a><a href="#id" lang="id">Bahasa Indonesia</a></nav>
 </header>
 <main>
 <section id="fr" lang="fr" aria-labelledby="title-fr">
@@ -81,6 +81,60 @@
 <h2>7. Droits, contact et modifications</h2>
 <p>Selon la législation applicable, vous pouvez demander l’accès, la rectification, l’effacement ou la limitation du traitement de vos données, vous opposer à certains traitements et retirer votre consentement. Vous pouvez également contacter l’autorité de protection des données compétente. Pour toute question ou demande : <a href="mailto:bruno.faugeroux@proton.me">bruno.faugeroux@proton.me</a> (ProueStudio).</p>
 <p>Cette politique peut évoluer. La version à jour est publiée sur cette page avec sa date de modification.</p>
+</section>
+
+<section id="en" lang="en" aria-labelledby="title-en">
+<h1 id="title-en">Privacy Policy</h1>
+<p class="updated">Last updated: September 13, 2026</p>
+<p>ProueStudio develops and publishes <strong>MoMethe — Themed Word Searches</strong> on Google Play and the App Store. This page explains the data used by the Game and its service providers, as well as your choices.</p>
+
+<h2>1. Data and how it is used</h2>
+<p>You can play without providing your real name or email address. This does not mean that the Game processes no personal data: technical identifiers and the data associated with them may distinguish a player or a device.</p>
+<ul>
+<li><strong>Progress and settings:</strong> levels, scores, your collection, preferences, and privacy choices are stored locally on your device. If you use the transfer feature to move to another phone, a backup of this data is sent to Firestore and associated with your Firebase identifier so it can be restored.</li>
+<li><strong>Online services:</strong> Firebase creates a technical account identifier. Profiles, nicknames, avatars, countries, rankings, scores, invitations, participants, and online game results may be associated with this identifier. Profile information and results intended for rankings or shared games are visible to the players concerned.</li>
+<li><strong>Google Play Games:</strong> on Android, if you use this service, Google processes your player profile, achievements, and gaming activity. The Game may use your profile identifier and name for gaming features. Your Google account settings control visibility and your connection to Play Games.</li>
+<li><strong>Notifications:</strong> a device token, your Firebase identifier, the platform, the language, and an update timestamp are used for notifications. These may concern duels, news about the Game, and invitations to return to play.</li>
+<li><strong>Statistics and diagnostics:</strong> depending on the settings described below, Firebase Analytics and Crashlytics process usage events and technical reports, including the Game version, device characteristics, instance identifiers, and crash information. This data is not presented as entirely anonymous.</li>
+<li><strong>Advertising and attribution:</strong> service providers may process your IP address, the approximate location inferred from it, device characteristics, technical identifiers, interactions with ads, and, depending on permissions and consent, your device's advertising identifier.</li>
+<li><strong>Purchases:</strong> Apple or Google processes the payment. RevenueCat verifies transactions and access to purchased features using user and purchase identifiers. Its identifier may be linked to your Firebase identifier. The Game does not receive your full payment card details.</li>
+</ul>
+
+<h2>2. Integrated service providers</h2>
+<h3>Firebase / Google</h3>
+<p>Firebase Auth, Cloud Firestore, and server functions provide technical accounts and online features. Firebase Cloud Messaging provides notifications; Firebase Analytics and Crashlytics help improve the Game's usability and stability. Internal statistics about activity, puzzles played, rewards, and purchase status are also stored in Firestore for our dashboard. These internal statistics follow the usage analytics setting (the combined "Analytics and crashes" choice on iOS and in older versions). Analytics also measures campaign goals, including rewarded ad views, through Firebase conversions used in Google Ads. Crashlytics helps identify and fix errors; the Game does not use these reports to personalize ads. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy?hl=en">Google Privacy Policy</a>, which also applies to Google Play Games.</p>
+<h3>Unity LevelPlay, Unity Ads, Google AdMob, and Liftoff Monetize</h3>
+<p>These services deliver optional rewarded videos and measure their delivery, performance, and fraud. They may use or share advertising data with their demand partners to select, deliver, personalize, and measure ads. LevelPlay also receives a player identifier to validate rewards. Liftoff is integrated on Android and iOS. An in-app purchase lets you receive the corresponding benefits without watching ads.</p>
+<p>Policies: <a href="https://unity.com/legal/privacy-policy">Unity / LevelPlay</a>, <a href="https://policies.google.com/technologies/partner-sites?hl=en">Google AdMob</a>, <a href="https://liftoff.io/privacy-policy/">Liftoff Monetize</a>.</p>
+<h3>AppsFlyer</h3>
+<p>AppsFlyer measures where installations come from and how acquisition campaigns perform. It receives technical data and events such as rewarded ad views and their placement in the Game. Starting with Android version 1.22.4, the SDK starts automatically for new installations with advertising identifier collection disabled and negative consent signals in the applicable regions. Attribution and events continue. Previous advertising choices that remain valid are preserved, whether they grant or refuse consent. On iOS and in earlier Android versions, the SDK starts after the consent step. Refusing advertising identifiers limits their use; it does not stop all attribution measurement or make all technical data, such as the AppsFlyer identifier or IP address, anonymous. See the <a href="https://www.appsflyer.com/legal/services-privacy-policy/">AppsFlyer Services Privacy Policy</a>.</p>
+<h3>RevenueCat</h3>
+<p>RevenueCat manages purchase validation and restoration, as well as access rights, together with the stores' payment services. See the <a href="https://www.revenuecat.com/privacy">RevenueCat Privacy Policy</a>.</p>
+
+<h2>3. Your choices</h2>
+<ul>
+<li><strong>Analytics and crash reports:</strong> starting with Android version 1.22.4, both types of collection are enabled by default for new installations, without a prompt at startup. This automatic setting is not recorded as consent you have expressed. You can disable usage analytics and crash reports separately in the Game's privacy settings. Changing one does not change the other or enable ad personalization. Existing choices, including refusals, are preserved and reapplied at launch. On iOS and in the relevant earlier versions, the combined "Analytics and crashes" choice is preserved; since version 1.21.6, these types of collection are disabled there without consent.</li>
+<li><strong>Advertising:</strong> starting with Android version 1.22.4, personalization is automatically disabled for new installations, without a prompt at launch. Previous consent and refusals that remain valid are preserved, along with their consent management flow. No advertising consent is recorded on your behalf. Ad networks receive the restrictions associated with refusal; AdMob uses its limited ads mode. Optional rewarded videos and technical processing for delivery, measurement, and fraud prevention remain present. On iOS and in earlier Android versions, the Game's settings let you review your choices, and Google UMP collects those applicable in the EEA, the United Kingdom, and Switzerland. iOS tracking permissions and Android advertising settings provide additional controls.</li>
+<li><strong>Notifications:</strong> the Game's settings let you choose certain categories of duel notifications. To block all displayed notifications, use MoMethe's system settings. Disabling display does not automatically delete the token stored on our servers.</li>
+<li><strong>Google Play Games:</strong> you can manage your connection, profile visibility, and the deletion of Play Games data in Google's settings. See <a href="https://support.google.com/googleplay/answer/9130646?hl=en">deleting Play Games data</a>. This action alone does not delete all data held by ProueStudio.</li>
+</ul>
+
+<h2>4. Retention and deletion</h2>
+<p>According to Firebase documentation, Crashlytics retains crash traces and associated identifiers for 90 days before starting to delete them from active and backup systems.</p>
+<p>Local data remains on your device until it is erased or replaced. The reset option in the Game erases the categories of local data intended for that purpose; restorable proof of purchase may be retained. It does not guarantee deletion of all remote data or data held by service providers.</p>
+<p>Profiles, game results, and transfer backups on our servers are not currently automatically purged after a fixed period. A duel or transfer code expiring does not delete this data. You can request its deletion at the address below. Purchase and security data, and data subject to a retention obligation, may follow different retention periods. Service providers also apply their own retention rules.</p>
+<p>For an access, correction, or deletion request, we may ask you for the information needed to locate your data, without asking for your password.</p>
+
+<h2>5. Sharing, hosting, and security</h2>
+<p>Data is shared with the service providers described here for the stated purposes, and with other players when you use sharing or ranking features. We do not sell a player list. Advertising processing may, however, involve exchanges of data between the partners described above. Some service providers may process data in other countries; their policies describe their processing locations and safeguards.</p>
+<p>We use security measures and access controls appropriate to the service. No transmission or storage can be guaranteed to be completely secure.</p>
+
+<h2>6. Intended audience</h2>
+<p>The Game is intended for people aged 13 and over. We do not seek to knowingly collect data from children under 13. Contact us if you believe this has happened.</p>
+
+<h2>7. Rights, contact, and changes</h2>
+<p>Depending on applicable law, you may request access to, correction of, erasure of, or restriction of the processing of your data, object to certain processing, and withdraw your consent. You may also contact the relevant data protection authority. For any question or request: <a href="mailto:bruno.faugeroux@proton.me">bruno.faugeroux@proton.me</a> (ProueStudio).</p>
+<p>This policy may change. The current version is published on this page with its update date.</p>
 </section>
 
 <section id="id" lang="id" aria-labelledby="title-id">
@@ -138,9 +192,15 @@
 </section>
 </main>
 <script>
-  // Les deux traductions restent accessibles sans JavaScript ni cookie.
-  if (!location.hash && /^id(?:-|$)/i.test(navigator.language || '')) {
-    document.getElementById('id').scrollIntoView();
+  // Les trois langues restent accessibles sans JavaScript ni cookie.
+  // Une ancre explicite (notamment #en depuis l'app) reste prioritaire.
+  // Sans ancre, les navigateurs anglais/indonésiens rejoignent leur section ;
+  // les autres gardent la version française de référence.
+  if (!location.hash) {
+    const language = navigator.language || '';
+    const section = /^en(?:-|$)/i.test(language) ? 'en'
+      : /^id(?:-|$)/i.test(language) ? 'id' : null;
+    if (section) document.getElementById(section).scrollIntoView();
   }
 </script>
 </body>
